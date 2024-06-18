@@ -1,0 +1,179 @@
+@use './colors' as *;
+@use './mixins' as *;
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	background-color: var(--primary-color-2);
+}
+
+///////
+// Nav
+///////
+
+.nav {
+	position: relative;
+	&__topbar {
+		background-color: var(--primary-color);
+	}
+	&__bottombar {
+		background-color: var(--primary-color-2);
+	}
+	&__items {
+		color: var(--secondary-color);
+	}
+	&__lang {
+		position: relative;
+	}
+	&__mobile {
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-150%, -50%);
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: var(--primary-color-2);
+		color: var(--secondary-color);
+		width: 100%;
+		height: 100%;
+		transition: transform 0.3s;
+		z-index: 10;
+	}
+	.active {
+		transform: translate(-50%, -50%);
+	}
+}
+.flag-trigger,
+.flag-img {
+	padding: 10px;
+	display: flex;
+	height: 60px;
+	width: auto;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+.lang-list {
+	position: absolute;
+	top: 68px;
+	background-color: var(--primary-color);
+	z-index: 9;
+	overflow: hidden;
+}
+.lang-item {
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: var(--primary-color-2);
+	}
+}
+
+.chevron-up {
+	display: block;
+	background-color: var(--secondary-color);
+	mask: url(../images/chevron-up.svg) center/cover;
+	height: 50px;
+	padding: 10px;
+	width: 100%;
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+.theme-icon {
+	display: none;
+
+	background-color: var(--secondary-color);
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.light-theme {
+	mask: url(../images/sun.svg) center/cover;
+}
+.dark-theme {
+	mask: url(../images/moon.svg) center/cover;
+}
+.current-theme {
+	display: block;
+}
+.burger-btn {
+	padding: 15px;
+	mask: url(../images/menu.svg) center/cover;
+	background-color: var(--secondary-color);
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.nav-item {
+	transition: color 0.3s;
+	&:hover {
+		color: var(--accent-color);
+	}
+}
+.nav__log-in {
+	justify-content: center;
+	align-items: center;
+	padding: 15px 30px;
+	background-color: var(--accent-color);
+	font-size: 1.5rem;
+	color: var(--primary-color);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.nav__log-in,
+.burger-btn,
+.theme-icon,
+.chevron-up,
+.close-nav-btn {
+	&:hover {
+		background-color: var(--accent-color-2);
+	}
+}
+.close-nav-btn {
+	position: absolute;
+	top: 10%;
+	left: 75%;
+	transform: translate(-50%, -50%);
+	background-color: var(--secondary-color);
+	mask: url(../images/x.svg) center/cover;
+	height: 70px;
+	width: 70px;
+	transition: background-color 0.3s;
+	cursor: pointer;
+}
+
+///////
+// Section-title
+///////
+.header-hero-img {
+	min-height: 400px;
+	height: calc(100vh - 158px);
+	@include hero-img-and-shadow('../images/woman-small.jpg', rgba(0, 0, 0, 0.6));
+	.logo {
+		display: inline-block;
+		background-color: white;
+		height: 40px;
+		width: 40px;
+		mask: url(../images/receipt.svg) center/cover;
+		z-index: 22;
+	}
+	.title {
+		font-family: 'The Girl Next Door', cursive;
+		line-height: 2.7rem;
+		padding: 30px;
+		font-size: 2.5rem;
+		color: white;
+	}
+}

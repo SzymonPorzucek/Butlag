@@ -1,0 +1,55 @@
+@use './colors' as *;
+@use './mixins' as *;
+
+@media (min-width: 640px) {
+	.header-hero-img {
+		.title {
+			padding: 0;
+			margin-top: 10%;
+			font-size: 4rem;
+			line-height: 3.5rem;
+		}
+	}
+}
+@media (min-width: 768px) {
+	.nav-item {
+		transition: color 0.3s, background-color 0.3s;
+		&:hover {
+			color: var(--primary-color);
+			background-color: var(--secondary-color);
+		}
+	}
+	.header-hero-img {
+			height: calc(100vh - 156px);
+			@include hero-img-and-shadow('../images/woman.jpg', rgba(0, 0, 0, 0.6));
+        .title{
+            margin-right: 10%;
+        }
+		.logo {
+			height: 60px;
+			width: 60px;
+		}
+	}
+}
+@media (min-width: 1024px) {
+	.nav {
+		background-color: var(--primary-color);
+
+		&__bottombar {
+			background-color: var(--primary-color);
+		}
+	}
+	.header-hero-img {
+		@include hero-img-and-shadow('../images/woman-big.jpg', rgba(0, 0, 0, 0.6));
+		height: calc(100vh - 112px);
+        .logo {
+			height: 80px;
+			width: 80px;
+		}
+		.title {
+            user-select: none;
+			font-size: 6rem;
+			line-height: 6rem;
+		}
+	}
+}

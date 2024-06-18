@@ -1,0 +1,18 @@
+@mixin hero-img-and-shadow($imgUrl, $shadow) {
+	position: relative;
+	width: 100%;
+	background-image: url($imgUrl);
+	background-size: cover;
+	background-position: center;
+	z-index: 1;
+	&::after {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color:$shadow;
+		z-index: -1;
+	}
+}
