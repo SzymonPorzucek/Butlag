@@ -7,6 +7,9 @@ const languageList = document.querySelector('.lang-list');
 const body = document.querySelector('body');
 const lightThemeBtn = document.querySelector('.light-theme');
 const darkThemeBtn = document.querySelector('.dark-theme');
+const chevronDown = document.querySelector('.chevron-down');
+const aboutSection = document.querySelector('#about');
+const fadeShop = document.querySelector('.fade-shop');
 
 const showMobileMenu = () => {
 	mobileMenu.classList.add('active');
@@ -43,12 +46,25 @@ const handleDarkMode = () => {
 	} else {
 		body.setAttribute('data-mode', 'light');
 	}
-	handleCurrentTheme()
+	handleCurrentTheme();
+};
+const moveToSection = () => {
+	aboutSection.scrollIntoView();
 };
 
+const showShop = () => {
+	if (window.innerWidth < 768) {
+		fadeShop.classList.add('half-visible');
+	} else {
+		fadeShop.classList.remove('half-visible');
+	}
+};
+showShop()
+window.addEventListener('resize',showShop)
 burgerBtn.addEventListener('click', showMobileMenu);
 document.addEventListener('click', checkAndCloseMenu);
 languageBtn.addEventListener('click', showLanguages);
 document.addEventListener('click', checkAndCloseLanguageList);
 lightThemeBtn.addEventListener('click', handleDarkMode);
 darkThemeBtn.addEventListener('click', handleDarkMode);
+chevronDown.addEventListener('click', moveToSection);

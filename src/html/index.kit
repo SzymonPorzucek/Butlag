@@ -42,7 +42,7 @@
                             <div class="burger-btn  md:hidden"></div>
                             <ul class="nav__items text-2xl hidden md:flex">
                                 <li class="nav-item block p-6 lg:py-10"><a href="#about" class="">About</a></li>
-                                <li class="nav-item block p-6 lg:py-10"><a href="#" class="">Shops</a></li>
+                                <li class="nav-item block p-6 lg:py-10"><a href="#shops" class="">Shops</a></li>
                                 <li class="nav-item block p-6 lg:py-10"><a href="#" class="">Features</a></li>
                                 <li class="nav-item block p-6 lg:py-10"><a href="#" class="">Contact</a></li>
                             </ul>
@@ -55,9 +55,9 @@
             <div class="nav__mobile flex md:hidden  text-4xl uppercase">
                 <div class="close-nav-btn"></div>
                 <ul class="nav__items space-y-6 text-center ">
-                    <li class="nav-item"><a href="#about" class="">Log in</a></li>
-                    <li class="nav-item"><a href="#2" class="">About</a></li>
-                    <li class="nav-item"><a href="#4" class="">Shops</a></li>
+                    <li class="nav-item"><a href="#1" class="">Log in</a></li>
+                    <li class="nav-item"><a href="#about" class="">About</a></li>
+                    <li class="nav-item"><a href="#shops" class="">Shops</a></li>
                     <li class="nav-item"><a href="#3" class="">Features</a></li>
                     <li class="nav-item"><a href="#4" class="">Contact</a></li>
                 </ul>
@@ -69,19 +69,106 @@
                     yours shopping
                 </h1>
             </div>
+            <div class="chevron-down"></div>
         </div>
     </header>
     <main>
 
-
         <section class="about" id="about">
+            <div class="wrapper container mt-20 pt-20 ">
+                <h2 class="title-h2">About the project</h2>
+                <div class="about__box pb-10 mb-10">
+                    <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+                        distinctio.
+                    </p>
+                    <div class="about__box--1">
+                        <img src="../images/shopping-list-small.jpg" alt="Shopping list on the pin board." class="img">
+                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto,
+                            voluptate neque nisi quibusdam corporis in, est temporibus deleniti mollitia quisquam porro
+                            hic
+                            odit. Blanditiis, voluptas dignissimos consequuntur porro, quo aliquam iusto deserunt unde
+                            quam,
+                            reiciendis corporis possimus ipsam! Deserunt.</p>
+                    </div>
+                    <div class="about__box--2">
 
-            <div class="wrapper">
+                        <img src="../images/checklist-1266989_640.png" alt="Shopping list on the pin board."
+                            class="img">
+                        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto,
+                            voluptate neque nisi quibusdam corporis in, est temporibus deleniti mollitia quisquam porro
+                            hic
+                            odit. Blanditiis, voluptas dignissimos consequuntur porro, quo aliquam iusto deserunt unde
+                            quam,
+                            reiciendis corporis possimus ipsam! Deserunt.</p>
+                    </div>
+                </div>
             </div>
 
+            <hr>
 
+            <div class="wrapper container mt-20">
+                <h2 class="title-h2">How does it work?</h2>
+                <div class="how-does-it-work py-10 mb-10 flex flex-wrap justify-around gap-14">
+
+                    <div class="how-does-it-work__box">
+                        <h3 class="title-h3">Join us</h3>
+                        <img src="../images/subscribe.jpg" alt="Log-in screen" class="img">
+                        <div class="text-box">
+                            <p class="text"><a href="">Create</a> an account or continue as a <a href="">guest.</a> </p>
+                        </div>
+                    </div>
+                    <div class="how-does-it-work__box">
+                        <h3 class="title-h3">Select product</h3>
+                        <img src="../images/ecommerce.jpg" alt="Log-in screen" class="img">
+                        <div class="text-box">
+                            <p class="text">Select your products from the most popular shops in Norway.</p>
+                        </div>
+                    </div>
+                    <div class="how-does-it-work__box">
+                        <h3 class="title-h3">Features</h3>
+                        <img src="../images/features.jpg" alt="Log-in screen" class="img">
+                        <div class="text-box">
+                            <p class="text">Try another functions of this application.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </section>
 
+        <section class="shops" id="shops">
+            <div class="wrapper container mt-20 pt-20 flex flex-col items-center">
+                <h2 class="title-h2">Available shops</h2>
+                <p class="text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+                    distinctio.
+                </p>
+                <div class="shops__box pb-10 mb-10">
+
+                    <div class="shops__shop">
+                        <img src="../images/meny-logo.png" alt="Meny-logo" class="img">
+                    </div>
+                    <div class="shops__shop">
+                        <img src="../images/kiwi-logo.png" alt="Kiwi-logo" class="img">
+                    </div>
+                    <div class="shops__shop fade-shop half-visible">
+                        <img src="../images/rema-logo.png" alt="Rema 1000-logo" class="img">
+                        <div class="chevron-down chevron-down-shop md:hidden"></div>
+                    </div>
+                    <div class="shops__shop">
+                        <img src="../images/spar-logo.png" alt="Spar-logo" class="img">
+                    </div>
+                    <div class="shops__shop">
+                        <img src="../images/europris-logo.png" alt="Europris-logo" class="img">
+                    </div>
+                    <div class="shops__shop">
+                        <img src="../images/coop-logo.png" alt="Coop-logo" class="img">
+                    </div>
+
+
+
+                </div>
+            </div>
+        </section>
     </main>
     <!-- @include scripts.kit -->
 </body

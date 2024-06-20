@@ -1,0 +1,33 @@
+@use './colors' as *;
+.title-h2 {
+	margin-bottom: 2rem;
+	color: var(--secondary-color-2);
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+.title-h3 {
+	padding: 1rem;
+	font-size: 2rem;
+	font-weight: bold;
+	text-align: center;
+	color: var(--secondary-color);
+}
+.text {
+	padding: 0 0 2rem 0;
+	max-width: 40ch;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	color: var(--secondary-color);
+}
+.img{
+	width: 100%;
+}
+hr {
+	margin: 40px 0;
+	height: 1px;
+	border: none;
+	background-color: var(--secondary-color-2);
+}

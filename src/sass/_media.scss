@@ -1,5 +1,6 @@
 @use './colors' as *;
 @use './mixins' as *;
+@use './animations' as *;
 
 @media (min-width: 640px) {
 	.header-hero-img {
@@ -20,14 +21,24 @@
 		}
 	}
 	.header-hero-img {
-			height: calc(100vh - 156px);
-			@include hero-img-and-shadow('../images/woman.jpg', rgba(0, 0, 0, 0.6));
-        .title{
-            margin-right: 10%;
-        }
+		height: calc(100vh - 156px);
+		@include hero-img-and-shadow('../images/woman.jpg', rgba(0, 0, 0, 0.6));
+		.title {
+			margin-right: 10%;
+		}
 		.logo {
 			height: 60px;
 			width: 60px;
+		}
+	}
+	.shops{
+		&__box{
+			grid-template-columns: repeat(2, minmax(250px, 1fr));
+		}
+		&__shop{
+			&:nth-child(n + 3) {
+				display: flex;
+			}
 		}
 	}
 }
@@ -42,14 +53,42 @@
 	.header-hero-img {
 		@include hero-img-and-shadow('../images/woman-big.jpg', rgba(0, 0, 0, 0.6));
 		height: calc(100vh - 112px);
-        .logo {
+		.logo {
 			height: 80px;
 			width: 80px;
 		}
 		.title {
-            user-select: none;
+			user-select: none;
 			font-size: 6rem;
 			line-height: 6rem;
+		}
+	}
+	.about {
+		&__box {
+			&--1,
+			&--2 {
+				margin-bottom: 50px;
+				gap: 100px;
+				flex-direction: row;
+				align-items: center;
+				.img {
+					width: 50%;
+					max-width: 500px;
+				}
+			}
+			&--2 {
+				.text {
+					order: 1;
+				}
+				.img {
+					order: 2;
+				}
+			}
+		}
+	}
+	.shops{
+		&__box{
+			grid-template-columns: repeat(3, minmax(250px, 1fr));
 		}
 	}
 }
