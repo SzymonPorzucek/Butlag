@@ -31,3 +31,18 @@ hr {
 	border: none;
 	background-color: var(--secondary-color-2);
 }
+.btn{
+	justify-content: center;
+	align-items: center;
+	padding: 15px 30px;
+	background-color: var(--accent-color);
+	font-size: 1.5rem;
+	color: var(--primary-color);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	&:hover {
+		background-color: var(--accent-color-2);
+	}
+}

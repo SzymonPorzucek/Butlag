@@ -15,6 +15,10 @@ const browserSync = require('browser-sync').create();
 const postcss = require('gulp-postcss');
 const tailwindcss = require('tailwindcss');
 
+const rollup = require('gulp-better-rollup'); 
+const { nodeResolve } = require('@rollup/plugin-node-resolve'); 
+const commonjs = require('@rollup/plugin-commonjs'); 
+
 const reload = browserSync.reload;
 
 const paths = {
@@ -56,10 +60,10 @@ function tailwindCompiler(cb) {
 function javaScript(cb) {
 	src(paths.js)
 		.pipe(sourcemaps.init())
-		.pipe(babel({ presets: ['@babel/env'] }))
+		.pipe(rollup({ plugins: [nodeResolve(), commonjs(), babel({ presets: ['@babel/env'] })] }, 'umd'))
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write())
+		.pipe(sourcemaps.write('.'))
 		.pipe(dest(paths.jsDest));
 	cb();
 }

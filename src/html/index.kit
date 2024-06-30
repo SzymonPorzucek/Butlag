@@ -17,7 +17,8 @@
                 <div class="nav__topbar">
                     <div class="nav__topbar-items flex justify-around container py-2 lg:space-x-10">
                         <div class="nav__lang">
-                            <img class=" flag-trigger" src="../images/flag-british.svg" alt="ENG">
+                            <button class="flag-btn" role="button"><img class=" flag-trigger  "
+                                    src="../images/flag-british.svg" alt="ENG"></button>
                             <ul class=" lang-list hidden space-y-3">
                                 <!-- <li> <a href="#"><img class="flag-img" src="../images/flag-british.svg" alt="ENG"></a>
                         </li> -->
@@ -27,30 +28,30 @@
                                 <li class="lang-item"> <a href="#2"><img class="flag-img"
                                             src="../images/flag-polish.svg" alt="PL"></a>
                                 </li>
-                                <li class="lang-item"><span class="chevron-up"></span></li>
+                                <li class="lang-item"><button class="chevron-up" role="button"></button></li>
                             </ul>
                         </div>
                         <div class="nav__theme flex justify-center items-center">
-                            <button class="light-theme  theme-icon"></button>
-                            <button class="dark-theme current-theme theme-icon"></button>
+                            <button class="light-theme theme-icon" role="button"></button>
+                            <button class="dark-theme current-theme theme-icon" role="button"></button>
                         </div>
                     </div>
                 </div>
                 <div class="nav__bottombar ">
                     <div class="nav__bottombar-items container px-10 flex justify-around items-center">
                         <div class="nav__box my-4 md:m-0 lg:flex">
-                            <div class="burger-btn  md:hidden"></div>
+                            <div class="burger-btn md:hidden"></div>
                             <ul class="nav__items text-2xl hidden md:flex">
-                                <li class="nav-item block p-6 lg:py-10"><a href="#about" class="">About</a></li>
-                                <li class="nav-item block p-6 lg:py-10"><a href="#shops" class="">Shops</a></li>
-                                <li class="nav-item block p-6 lg:py-10"><a href="#" class="">Features</a></li>
-                                <li class="nav-item block p-6 lg:py-10"><a href="#" class="">Contact</a></li>
+                                <li><a href="#about" class="nav-item block p-6 lg:py-10">About</a></li>
+                                <li><a href="#shops" class="nav-item block p-6 lg:py-10">Shops</a></li>
+                                <li><a href="#features" class="nav-item block p-6 lg:py-10">Features</a></li>
+                                <li><a href="#" class="nav-item block p-6 lg:py-10">Contact</a></li>
                             </ul>
                         </div>
-                        <div class="nav__log-in lg:hidden"><a href="#">Log in</a></div>
+                        <div class="nav__log-in btn lg:hidden"><a href="#">Log in</a></div>
                     </div>
                 </div>
-                <div class="nav__log-in hidden lg:flex"><a href="#">Log in</a></div>
+                <div class="nav__log-in btn hidden lg:flex"><a href="#">Log in</a></div>
             </div>
             <div class="nav__mobile flex md:hidden  text-4xl uppercase">
                 <div class="close-nav-btn"></div>
@@ -58,7 +59,7 @@
                     <li class="nav-item"><a href="#1" class="">Log in</a></li>
                     <li class="nav-item"><a href="#about" class="">About</a></li>
                     <li class="nav-item"><a href="#shops" class="">Shops</a></li>
-                    <li class="nav-item"><a href="#3" class="">Features</a></li>
+                    <li class="nav-item"><a href="#features" class="">Features</a></li>
                     <li class="nav-item"><a href="#4" class="">Contact</a></li>
                 </ul>
             </div>
@@ -66,7 +67,7 @@
         <div class="header-hero-img ">
             <div class="lg:container flex justify-end">
                 <h1 class="title text-center max-w-[16ch] lg:max-w-[12ch] "><span class="logo"></span>ButLag - plan
-                    yours shopping
+                    your shopping
                 </h1>
             </div>
             <div class="chevron-down"></div>
@@ -75,7 +76,7 @@
     <main>
 
         <section class="about" id="about">
-            <div class="wrapper container mt-20 pt-20 ">
+            <div class="wrapper container mt-10 pt-10 ">
                 <h2 class="title-h2">About the project</h2>
                 <div class="about__box pb-10 mb-10">
                     <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
@@ -92,8 +93,8 @@
                     </div>
                     <div class="about__box--2">
 
-                        <img src="../images/checklist-1266989_640.png" alt="Man is sitting at the desk and thinking about list."
-                            class="img">
+                        <img src="../images/checklist-1266989_640.png"
+                            alt="Man is sitting at the desk and thinking about list." class="img">
                         <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem iusto,
                             voluptate neque nisi quibusdam corporis in, est temporibus deleniti mollitia quisquam porro
                             hic
@@ -119,7 +120,8 @@
                     </div>
                     <div class="how-does-it-work__box">
                         <h3 class="title-h3">Select product</h3>
-                        <img src="../images/ecommerce.jpg" alt="Shopping carts and shopping bags coming out of the phone." class="img">
+                        <img src="../images/ecommerce.jpg"
+                            alt="Shopping carts and shopping bags coming out of the phone." class="img">
                         <div class="text-box">
                             <p class="text">Select your products from the most popular shops in Norway.</p>
                         </div>
@@ -137,38 +139,94 @@
         </section>
 
         <section class="shops" id="shops">
-            <div class="wrapper container mt-20 pt-20 flex flex-col items-center">
+            <div class="wrapper container my-20 pt-20 flex flex-col items-center">
                 <h2 class="title-h2">Available shops</h2>
                 <p class="text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
                     distinctio.
                 </p>
-                <div class="shops__box py-10 mb-10">
+                <div class="shops__box p-10 lg:p-20 mb-10">
 
-                    <div class="shops__shop">
+                    <div class="shop">
                         <img src="../images/meny-logo.png" alt="Meny-logo" class="img">
                     </div>
-                    <div class="shops__shop">
+                    <div class="shop">
                         <img src="../images/kiwi-logo.png" alt="Kiwi-logo" class="img">
                     </div>
-                    <div class="shops__shop fade-shop half-visible">
+                    <div class="shop fade-shop half-visible">
                         <img src="../images/rema-logo.png" alt="Rema 1000-logo" class="img">
                         <div class="chevron-down chevron-down-shop md:hidden"></div>
                     </div>
-                    <div class="shops__shop">
+                    <div class="shop">
                         <img src="../images/spar-logo.png" alt="Spar-logo" class="img">
                     </div>
-                    <div class="shops__shop">
+                    <div class="shop">
                         <img src="../images/europris-logo.png" alt="Europris-logo" class="img">
                     </div>
-                    <div class="shops__shop">
+                    <div class="shop">
                         <img src="../images/coop-logo.png" alt="Coop-logo" class="img">
                     </div>
+                </div>
+            </div>
 
-
-
+            <div class="newsletter">
+                <div class="wrapper container">
+                    <h3 class="title-h3">Subscribe our newsletter!</h3>
+                    <p class="newsletter__text">Join thousands of users and always stay up to date*</p>
+                    <form id="newsletter-form" class="newsletter__form">
+                        <input class="newsletter__input" type="email" id="email" name="email"
+                            placeholder="Enter your email">
+                        <button type="submit" class="newsletter-btn btn">Subscribe!</button>
+                    </form>
+                    <p class="error-msg">sad</p>
                 </div>
             </div>
         </section>
+
+        <section class="features" id="features">
+            <div class="wrapper container my-10 py-10">
+                <h2 class="title-h2">Features</h2>
+
+                <div class="features__box flex justify-center flex-col items-center">
+                    <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
+                        distinctio.</p>
+                    <div class="slider mt-10">
+
+                        <div class="slider-box">
+                          
+                            <div class="slide">
+                                <h3 class="slide-title">Shoping list</h3>
+                                <img src="../images/list.jpg" alt="Woman is carrying notebord" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <h3 class="slide-title">Price</h3>
+                                <img src="../images/receipt-price.jpg" alt="Receipt of daily shopping"
+                                    class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <h3 class="slide-title">Notes</h3>
+                                <img src="../images/post-it-notes.jpg" alt="Sticky notes on laptop" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <h3 class="slide-title">Location</h3>
+                                <img src="../images/maps.jpg" alt="Map of Europe" class="slide-img">
+                            </div>
+                            <div class="slide">
+                                <h3 class="slide-title">Shoping list</h3>
+                                <img src="../images/list.jpg" alt="Woman is carrying notebord" class="slide-img">
+                            </div>
+
+
+                        </div>
+                        <button class="slider__btn slider__btn--prev">&lt;</button>
+                        <button class="slider__btn slider__btn--next">&gt;</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </section>
+
     </main>
     <!-- @include scripts.kit -->
 </body>
