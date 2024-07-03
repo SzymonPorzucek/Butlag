@@ -1,4 +1,13 @@
 @use './colors' as *;
+.logo {
+	display: inline-block;
+	background-color: white;
+	height: 40px;
+	width: 40px;
+	mask: url(../images/receipt.svg) center/cover;
+	z-index: 22;
+}
+
 .title-h2 {
 	margin-bottom: 2rem;
 	color: var(--secondary-color-2);
@@ -22,7 +31,7 @@
 	line-height: 2rem;
 	color: var(--secondary-color);
 }
-.img{
+.img {
 	width: 100%;
 }
 hr {
@@ -31,10 +40,10 @@ hr {
 	border: none;
 	background-color: var(--secondary-color-2);
 }
-.btn{
+.btn {
 	justify-content: center;
 	align-items: center;
-	padding: 15px 30px;
+	padding: 1rem 2rem;
 	background-color: var(--accent-color);
 	font-size: 1.5rem;
 	color: var(--primary-color);
@@ -45,4 +54,10 @@ hr {
 	&:hover {
 		background-color: var(--accent-color-2);
 	}
+}
+.error-msg {
+	width: 100%;
+	height: 30px;
+	font-size: 1.25rem;
+	color: red;
 }

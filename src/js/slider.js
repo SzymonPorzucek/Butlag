@@ -7,6 +7,8 @@ export const initSlider = () => {
 
 	let currentSlideIndex = 0;
 	let isTransitioning = false;
+	let startX
+	let endX
 
 	const handleSlider = () => {
 		if (!isTransitioning) {
@@ -26,7 +28,7 @@ export const initSlider = () => {
 			'transitionend',
 			() => {
 				if (currentSlideIndex >= slides.length - 1) {
-					currentSlideIndex = 0;
+					currentSlideIndex = 1;
 					sliderBox.style.transition = 'none';
 					sliderBox.style.transform = `translateX(${
 						-currentSlideIndex * 100
@@ -38,6 +40,7 @@ export const initSlider = () => {
 						-currentSlideIndex * 100
 					}%)`;
 				}
+
 				isTransitioning = false;
 			},
 			{ once: true }
@@ -62,6 +65,25 @@ export const initSlider = () => {
 		startSlider = setInterval(handleSlider, sliderSpeed);
 	};
 
+	const handleTouchStart = e => {
+		startX = e.touches[0].clientX;
+	};
+	const handleTouchMove = e => {
+		endX = e.touches[0].clientX;
+	};
+
+	const handleTouchEnd = () => {
+		if (!isTransitioning) {
+			if (startX > endX + 50) {
+				sliderNextImg();
+			} else if (startX < endX - 50) {
+				sliderPrevImg();
+			}
+		}
+	};
 	sliderNextBtn.addEventListener('click', sliderNextImg);
 	sliderPrevBtn.addEventListener('click', sliderPrevImg);
+	sliderBox.addEventListener('touchstart', handleTouchStart)
+	sliderBox.addEventListener('touchmove', handleTouchMove)
+	sliderBox.addEventListener('touchend', handleTouchEnd)
 };

@@ -45,13 +45,13 @@
                                 <li><a href="#about" class="nav-item block p-6 lg:py-10">About</a></li>
                                 <li><a href="#shops" class="nav-item block p-6 lg:py-10">Shops</a></li>
                                 <li><a href="#features" class="nav-item block p-6 lg:py-10">Features</a></li>
-                                <li><a href="#" class="nav-item block p-6 lg:py-10">Contact</a></li>
+                                <li><a href="#contact" class="nav-item block p-6 lg:py-10">Contact</a></li>
                             </ul>
                         </div>
-                        <div class="nav__log-in btn lg:hidden"><a href="#">Log in</a></div>
+                        <div class="nav__log-in btn lg:hidden"><a href="#">START</a></div>
                     </div>
                 </div>
-                <div class="nav__log-in btn hidden lg:flex"><a href="#">Log in</a></div>
+                <div class="nav__log-in btn hidden lg:flex"><a href="#">START</a></div>
             </div>
             <div class="nav__mobile flex md:hidden  text-4xl uppercase">
                 <div class="close-nav-btn"></div>
@@ -60,7 +60,7 @@
                     <li class="nav-item"><a href="#about" class="">About</a></li>
                     <li class="nav-item"><a href="#shops" class="">Shops</a></li>
                     <li class="nav-item"><a href="#features" class="">Features</a></li>
-                    <li class="nav-item"><a href="#4" class="">Contact</a></li>
+                    <li class="nav-item"><a href="#contact" class="">Contact</a></li>
                 </ul>
             </div>
         </nav>
@@ -76,7 +76,7 @@
     <main>
 
         <section class="about" id="about">
-            <div class="wrapper container mt-10 pt-10 ">
+            <div class="wrapper container mt-20 pt-20 ">
                 <h2 class="title-h2">About the project</h2>
                 <div class="about__box pb-10 mb-10">
                     <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
@@ -107,9 +107,9 @@
 
             <hr>
 
-            <div class="wrapper container mt-20">
+            <div class="wrapper container py-20">
                 <h2 class="title-h2">How does it work?</h2>
-                <div class="how-does-it-work py-10 mb-10 flex flex-wrap justify-around gap-14">
+                <div class="how-does-it-work py-10 flex flex-wrap justify-around gap-14">
 
                     <div class="how-does-it-work__box">
                         <h3 class="title-h3">Join us</h3>
@@ -133,13 +133,12 @@
                             <p class="text">Try another functions of this application.</p>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
 
         <section class="shops" id="shops">
-            <div class="wrapper container my-20 pt-20 flex flex-col items-center">
+            <div class="wrapper container pt-40 flex flex-col items-center">
                 <h2 class="title-h2">Available shops</h2>
                 <p class="text text-center ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
                     distinctio.
@@ -173,30 +172,32 @@
                     <h3 class="title-h3">Subscribe our newsletter!</h3>
                     <p class="newsletter__text">Join thousands of users and always stay up to date*</p>
                     <form id="newsletter-form" class="newsletter__form">
-                        <input class="newsletter__input" type="email" id="email" name="email"
+                        <input class="newsletter__input" type="email" id="email-newsletter" name="email-newsletter"
                             placeholder="Enter your email">
                         <button type="submit" class="newsletter-btn btn">Subscribe!</button>
                     </form>
-                    <p class="error-msg">sad</p>
+                    <p class="error-msg newsletter-error-msg mt-4 text-center"></p>
                 </div>
             </div>
         </section>
 
         <section class="features" id="features">
-            <div class="wrapper container my-10 py-10">
+            <div class="wrapper container mt-20 py-20">
                 <h2 class="title-h2">Features</h2>
-
                 <div class="features__box flex justify-center flex-col items-center">
                     <p class="text text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe,
                         distinctio.</p>
                     <div class="slider mt-10">
-
                         <div class="slider-box">
-                          
+                            <div class="slide">
+                                <h3 class="slide-title">To do list</h3>
+                                <img src="../images/todo-list.jpg" alt="To do list" class="slide-img">
+                            </div>
                             <div class="slide">
                                 <h3 class="slide-title">Shoping list</h3>
                                 <img src="../images/list.jpg" alt="Woman is carrying notebord" class="slide-img">
                             </div>
+
                             <div class="slide">
                                 <h3 class="slide-title">Price</h3>
                                 <img src="../images/receipt-price.jpg" alt="Receipt of daily shopping"
@@ -207,27 +208,101 @@
                                 <img src="../images/post-it-notes.jpg" alt="Sticky notes on laptop" class="slide-img">
                             </div>
                             <div class="slide">
-                                <h3 class="slide-title">Location</h3>
-                                <img src="../images/maps.jpg" alt="Map of Europe" class="slide-img">
+                                <h3 class="slide-title">To do list</h3>
+                                <img src="../images/todo-list.jpg" alt="To do list" class="slide-img">
                             </div>
                             <div class="slide">
                                 <h3 class="slide-title">Shoping list</h3>
                                 <img src="../images/list.jpg" alt="Woman is carrying notebord" class="slide-img">
                             </div>
-
-
                         </div>
                         <button class="slider__btn slider__btn--prev">&lt;</button>
                         <button class="slider__btn slider__btn--next">&gt;</button>
                     </div>
-
-
                 </div>
+            </div>
+            <div class="whats-next">
+                <div class="wrapper container py-20 flex flex-col items-center">
+                    <h2 class="title-h2">What's next?</h2>
+                    <p class="text text-center">We try to develop all the time. What do we have to planned?</p>
+                    <ul class="whats-next__list space-y-4">
+                        <li><span>🔷</span></li>
+                        <li> Expanding the range of stores</li>
+                        <li><span>🔷</span></li>
+                        <li> Faster pirce update</li>
+                        <li><span>🔷</span></li>
+                        <li> Searching for stores by location</li>
+                        <li><span>🔷</span></li>
+                        <li> Sales notifications</li>
+                        <li><span>🔷</span></li>
+                    </ul>
 
+                    <div class="log-in flex flex-col items-center justify-center pt-12">
+
+                        <div class="btn log-in-btn my-6"><a href="#">Log in</a></div>
+
+                        <p class="text-center cta-text">Log in and start your journey now!</p>
+                    </div>
+                </div>
             </div>
         </section>
 
+        <section class="contact" id="contact">
+            <div class="wrapper container pt-40 pb-20 flex flex-col items-center">
+                <h2 class="title-h2">Contact</h2>
+                <form class="contact__form flex flex-row flex-wrap justify-center">
+
+                    <div class="contact__form-box">
+                        <label for="name">Your name:</label>
+                        <input type="text" id="name" class="contact-name-input">
+                        <p class="error-msg contact-error-name ml-2 mt-4"></p>
+                    </div>
+                    <div class="contact__form-box">
+                        <label for="email">Your email:</label>
+                        <input type="email" id="email" class="contact-email-input">
+                        <p class="error-msg contact-error-email ml-2 mt-4"></p>
+                    </div>
+
+                    <div class="contact__form-box">
+                        <label for="contact-msg">Message:</label>
+                        <textarea id="contact-msg" class="contact-msg"></textarea>
+                        <p class="error-msg contact-error-msg ml-2 my-4"></p>
+                    </div>
+                    <div class="contact__form-box ">
+                        <button type="submit" class="btn contact-send-btn">Send</button>
+                    </div>
+                </form>
+        </section>
     </main>
+
+
+    <footer class="footer">
+        <div class="wrapper container flex flex-col items-center">
+            <div class="footer__social-media flex justify-evenly w-full py-10">
+                <a href="https://www.facebook.com/" class="facebook"></a>
+                <a href="https://www.instagram.com/" class="instagram"></a>
+                <a href="https://x.com" class="twitter"></a>
+                <a href="https://www.youtube.com/" class="youtube"></a>
+            </div>
+            <p class="text text-center">&copy; <span class="footer__year mr-2"></span><span class="logo"></span>ButLag
+                <a href="#" class="pl-4 font-bold">UP🔝</a>
+            </p>
+        </div>
+    </footer>
+
+    <div class="newsletter-success-info">
+        <div class=" info-box container flex flex-col justify-center items-center p-16">
+            <p class="info-text text text-center mb-10">Thank you for subscribing!</p>
+            <button class="btn close-btn">Continue</button>
+        </div>
+    </div>
+    <div class="contact-success-info">
+        <div class=" info-box container flex flex-col justify-center items-center p-16">
+            <p class="info-text text text-center mb-10">Thank you for contact! <br> We will respond soon!</p>
+            <button class="btn close-btn">Continue</button>
+        </div>
+    </div>
+
     <!-- @include scripts.kit -->
 </body>
 

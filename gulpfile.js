@@ -58,15 +58,37 @@ function tailwindCompiler(cb) {
 }
 
 function javaScript(cb) {
-	src(paths.js)
-		.pipe(sourcemaps.init())
-		.pipe(rollup({ plugins: [nodeResolve(), commonjs(), babel({ presets: ['@babel/env'] })] }, 'umd'))
-		.pipe(uglify())
-		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write('.'))
-		.pipe(dest(paths.jsDest));
-	cb();
+    return src(paths.js)
+        .pipe(sourcemaps.init())
+        .pipe(rollup({
+            plugins: [
+                nodeResolve(),
+                commonjs(),
+                babel({ presets: ['@babel/env'] })
+            ]
+        }, 'umd').on('error', function(err) {
+            console.error('Rollup error:', err.message);
+            this.emit('end'); // Emit 'end' to continue Gulp task
+        }))
+        .pipe(uglify().on('error', function(err) {
+            console.error('Uglify error:', err.message);
+            this.emit('end'); // Emit 'end' to continue Gulp task
+        }))
+        .pipe(rename({ suffix: '.min' }))
+        .pipe(sourcemaps.write('.'))
+        .pipe(dest(paths.jsDest));
 }
+
+// function javaScript(cb) {
+// 	src(paths.js)
+// 		.pipe(sourcemaps.init())
+// 		.pipe(rollup({ plugins: [nodeResolve(), commonjs(), babel({ presets: ['@babel/env'] })] }, 'umd'))
+// 		.pipe(uglify())
+// 		.pipe(rename({ suffix: '.min' }))
+// 		.pipe(sourcemaps.write('.'))
+// 		.pipe(dest(paths.jsDest));
+// 	cb();
+// }
 
 function convertImg(cb) {
 	src(paths.img).pipe(imagemin()).pipe(dest(paths.imgDest));

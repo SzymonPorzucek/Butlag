@@ -1,18 +1,22 @@
 [data-mode='dark'] {
 	--primary-color: #222831;
 	--primary-color-90p: rgb(34, 40, 49,0.9);
+	--primary-color-50p: rgb(238, 238, 238,0.5);
 	--primary-color-2: #393e46;
 	--accent-color: #00adb5;
 	--accent-color-2: #029ba3;
 	--secondary-color: #eeeeee;
 	--secondary-color-2: #c7c5c0;
+	--footer-color: #4B3F35;
 }
 [data-mode='light'] {
 	--primary-color: #e9e9e9;
 	--primary-color-90p: rgba(233, 233, 233,0.9);
+	--primary-color-50p: rgba(34, 40, 49,0.5);
 	--primary-color-2: #eeeeee;
 	--accent-color: #00adb5;
 	--accent-color-2: #029ba3;
 	--secondary-color: #222831;
 	--secondary-color-2: #393e46;
+	--footer-color: #A1887F
 }
