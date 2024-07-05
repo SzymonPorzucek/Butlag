@@ -16,6 +16,8 @@ export const initLangList = () => {
 		}
 	};
 
+
+
 	languageListClosingBtn.addEventListener('click', checkAndCloseLanguageList);
 	languageBtn.addEventListener('click', showLanguages);
 	document.addEventListener('click', checkAndCloseLanguageList);

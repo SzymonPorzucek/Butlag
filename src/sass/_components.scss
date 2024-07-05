@@ -1,13 +1,26 @@
 @use './colors' as *;
-.logo {
-	display: inline-block;
-	background-color: white;
-	height: 40px;
-	width: 40px;
-	mask: url(../images/receipt.svg) center/cover;
-	z-index: 22;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	scroll-behavior: smooth;
+}
+body {
+	position: relative;
+	height: 100%;
+	background-color: var(--primary-color-2);
 }
 
+.logo {
+	display: inline-block;
+	background-color: var(--secondary-color);
+	height: 40px;
+	width: 40px;
+	mask: url(../../images/receipt.svg) center/cover;
+	z-index: 22;
+}
 .title-h2 {
 	margin-bottom: 2rem;
 	color: var(--secondary-color-2);
@@ -60,4 +73,33 @@ hr {
 	height: 30px;
 	font-size: 1.25rem;
 	color: red;
+}
+.theme-icon {
+	display: none;
+	background-color: var(--secondary-color);
+	height: 35px;
+	width: 35px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+.light-theme {
+	mask: url(../../images/sun.svg) center/cover;
+}
+.dark-theme {
+	mask: url(../../images/moon.svg) center/cover;
+}
+.current-theme {
+	display: block;
+}
+.help-mark {
+	display: inline-block;
+	background-color: var(--secondary-color);
+	height: 25px;
+	width: 25px;
+	mask: url(../../images/help-circle.svg) center/cover;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
+input {
+	color: #222831;
 }

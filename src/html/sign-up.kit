@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButLag-APP</title>
+    <!-- @include styles-app.kit -->
+</head>
+
+<body data-mode="light">
+    <main>
+        <section class="sign-up flex flex-col justify-center items-center" id="sign-up">
+            <div class="central-position container flex flex-col items-center">
+                <header class="sign-up__header w-full flex flex-col items-center md:my-10">
+                    <h2 class="title-h2">Create new account</h2>
+                    <p class="text-center w-[20ch] sm:w-full text-xl">Do you have an account? <a class="sign-up__log-in" href="log-in.html">Log
+                            in.</a></p>
+                </header>
+                <form class="sign-up__form flex flex-col items-center w-full">
+                    <div class="sign-up__form-name md:w-3/5 lg:flex lg:justify-between">
+                        <div class="lg:max-w-1/2 lg:mr-4">
+                            <label class="sign-up__name-label label" for="name">Name:</label>
+                            <input class="sign-up__name-input input" type="text" name="name" id="name">
+                            <p class="error-msg sign-up-error-name ml-2 mt-2"></p>
+                        </div>
+                        <div class="lg:max-w-1/2 lg:ml-4">
+                            <label class="sign-up__lastname-label label" for="lastname">Lastname:</label>
+                            <input class="sign-up__lastname-input input" type="text" name="lastname" id="lastname">
+                            <p class="error-msg ml-2 mt-2"></p>
+                        </div>
+                    </div>
+                    <div class="md:w-3/5">
+                        <label class="sign-up__email-label label" for="email">Email:</label>
+                        <input class="sign-up__email-input input" type="email" name="email" id="email">
+                        <p class="error-msg sign-up-error-email ml-2 mt-2"></p>
+                    </div>
+                    <div class="password md:w-3/5">
+
+                        <label class="sign-up__password-label label" for="password"><span class="help-mark"></span>
+                            Password:
+                            <div class="password-info" role="region" aria-label="Password requirements">Password must have at least:
+                                <ul>
+                                    <li><strong>❗ 8 characters</strong></li>
+                                    <li><strong>❗ 1 capital letter</strong></li>
+                                    <li><strong>❗ 2 digits</strong></li>
+                                    <li><strong>❗ 1 special character [!@#$%&*]</strong></li>
+                                </ul>
+                            </div>
+                        </label>
+                        <input class="sign-up__password-input input" type="password" name="password" id="password">
+                        <p class="error-msg sign-up-error-password ml-2 mt-2"></p>
+                    </div>
+
+                    <div class="md:w-3/5">
+                        <label class="sign-up__repeat-password-label label" for="repeat-password">Repeat
+                            password:</label>
+                        <input class="sign-up__repeat-password-input input" type="password" name="repeat-password"
+                            id="repeat-password">
+                        <p class="error-msg sign-up-error-repeat-password ml-2 my-2"></p>
+                    </div>
+                    <button type="submit" class="sign-up__register btn mt-2 md:mb-8">Create new account</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="hidden">
+        <button class="light-theme theme-icon" role="button"></button>
+        <button class="dark-theme current-theme theme-icon" role="button"></button>
+    </div>
+    <script src="./js/app/sign-up.min.js"></script>
+</body>
+
+</html>

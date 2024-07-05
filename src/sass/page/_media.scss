@@ -1,6 +1,6 @@
-@use './colors' as *;
-@use './mixins' as *;
-@use './animations' as *;
+@use '../colors' as *;
+@use '../mixins' as *;
+@use '../animations' as *;
 
 @media (min-width: 640px) {
 	.header-hero-img {
@@ -8,7 +8,7 @@
 			padding: 0;
 			margin-top: 10%;
 			font-size: 4rem;
-			line-height: 3.5rem;
+			line-height: 4.5rem;
 		}
 	}
 }
@@ -22,7 +22,7 @@
 	}
 	.header-hero-img {
 		height: calc(100vh - 156px);
-		@include hero-img-and-shadow('../images/woman.jpg', rgba(0, 0, 0, 0.6));
+		@include hero-img-and-shadow('../../images/woman.jpg', rgba(0, 0, 0, 0.6));
 		.title {
 			margin-right: 10%;
 		}
@@ -40,7 +40,7 @@
 		min-height: 600px;
 
 		@include hero-img-and-shadow(
-			'../images/iphone-mail.jpg',
+			'../../images/iphone-mail.jpg',
 			rgba(0, 0, 0, 0.6)
 		);
 		.title-h3 {
@@ -79,7 +79,7 @@
 		}
 	}
 	.header-hero-img {
-		@include hero-img-and-shadow('../images/woman-big.jpg', rgba(0, 0, 0, 0.6));
+		@include hero-img-and-shadow('../../images/woman-big.jpg', rgba(0, 0, 0, 0.6));
 		height: calc(100vh - 112px);
 		.logo {
 			height: 80px;
@@ -88,7 +88,7 @@
 		.title {
 			user-select: none;
 			font-size: 6rem;
-			line-height: 6rem;
+			line-height: 6.75rem;
 		}
 	}
 	.about {
@@ -143,7 +143,7 @@
 	.newsletter {
 		min-height: 700px;
 		@include hero-img-and-shadow(
-			'../images/iphone-mail-big.jpg',
+			'../../images/iphone-mail-big.jpg',
 			rgba(0, 0, 0, 0.6)
 		);
 	}

@@ -1,9 +1,9 @@
 import { initBurgerMenu } from './burgerMenu.js';
 import { initLangList } from './langList.js';
-import { initTheme } from './theme.js';
+import { initTheme } from '../theme.js';
 import { initShopsAccordion } from './shopsAccordion.js';
 import { initSlider } from './slider.js';
-import { initPageFunctions } from './pageFunctions.js';
+import { initPageFunctions } from '../pageFunctions.js';
 import { initNewsletter } from './newsletter.js';
 import { initContact } from './contact.js';
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,5 +14,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	initShopsAccordion();
 	initSlider();
 	initNewsletter();
-	initContact()
+	initContact();
 });

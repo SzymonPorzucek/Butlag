@@ -14,7 +14,10 @@ export const initBurgerMenu = () => {
 			mobileMenu.classList.remove('active');
 		}
 	};
+	
 	burgerBtn.addEventListener('click', showMobileMenu);
 	closeNavBtn.addEventListener('click', checkAndCloseMenu);
 	document.addEventListener('click', checkAndCloseMenu);
 };
+
+

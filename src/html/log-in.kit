@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ButLag-APP</title>
+    <!-- @include styles-app.kit -->
+</head>
+
+<body data-mode="light">
+    <main>
+        <section class="log-in flex flex-col justify-center items-center" id="log-in">
+            <div class="central-position container flex flex-col items-center">
+                <header class="w-full flex flex-col items-center justify-center space-y-4">
+
+                    <div class="log-in__theme flex flex-row justify-around items-center w-full md:my-10">
+                        <div>
+                            <button class="light-theme theme-icon" role="button"></button>
+                            <button class="dark-theme current-theme theme-icon" role="button"></button>
+                        </div>
+                        <div class="log-in__title hidden md:block">
+                            <h2 class="title-h2">Log in</h2>
+                        </div>
+                        <div class="log-in__logo"><a href="index.html" class="logo">
+                            </a></div>
+                    </div>
+                    <div class="log-in__title md:hidden">
+                        <h2 class="title-h2">Log in</h2>
+                    </div>
+                </header>
+                <form class="log-in__form flex flex-col items-center">
+                    <div class="md:w-3/5">
+                        <label class="log-in__email-label label" for="email">Email:</label>
+                        <input class="log-in__email-input input" type="email" name="email" id="email">
+                        <p class="error-msg log-in-error-email ml-2 mt-2"></p>
+                    </div>
+                    <div class="md:w-3/5">
+                        <label class="log-in__password-label label" for="password"></span>Password:</label>
+                        <input class="log-in__password-input input" type="password" name="password" id="password">
+                        <p class="error-msg log-in-error-password ml-2 mt-2"></p>
+                    </div>
+
+                    <button type="submit" class="log-in__btn btn mt-6 my-4">Log in</button>
+                </form>
+                <p class="mb-8 text-center text-xl"><span class="log-in__guest-mode">Continue as a guest</span> or:</p>
+                <a href="sign-up.html" class="log-in__register btn md:mb-8">Sign up</a>
+        </section>
+        <span class="password-info"></span>
+
+        <script src="./js/app/log-in.min.js"></script>
+</body>
+
+</html>

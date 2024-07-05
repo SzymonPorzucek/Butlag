@@ -1,5 +1,5 @@
-import { validName, validEmail, validMsg } from './validation.js';
-import { closePopup, showPopup } from './pageFunctions.js';
+import { validName, validEmail, validMsg } from '../validation.js';
+import { closePopup, showPopup } from '../pageFunctions.js';
 export const initContact = () => {
 	const contactNameInput = document.querySelector('.contact-name-input');
 	const contactEmailInput = document.querySelector('.contact-email-input');
@@ -10,6 +10,8 @@ export const initContact = () => {
 	const contactErrorMsg = document.querySelector('.contact-error-msg');
 	const contactSuccessInfo = document.querySelector('.contact-success-info');
 
+
+	
 	const sendMsg = async contactData => {
 		//
 		// Delete popup when I'll be done with server setup

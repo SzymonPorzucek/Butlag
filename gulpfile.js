@@ -41,7 +41,7 @@ function sassCompiler(cb) {
 		.pipe(autoprefixer())
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
-		.pipe(sourcemaps.write())
+		.pipe(sourcemaps.write('.'))
 		.pipe(dest(paths.sassDest));
 	cb();
 }

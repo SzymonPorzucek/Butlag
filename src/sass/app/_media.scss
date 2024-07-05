@@ -1,0 +1,40 @@
+@use '../colors' as *;
+@use '../mixins' as *;
+@use '../animations' as *;
+
+@media (min-width: 768px) {
+	.central-position {
+		width: 70%;
+
+		.title-h2 {
+			font-size: 2.5rem;
+		}
+	}
+	.password {
+		.password-info {
+			font-size: 1.125rem;
+			padding: 1rem;
+		}
+	}
+    .sign-up{
+        &__register{
+font-size: 1.5rem;
+        }
+    }
+}
+@media (min-width: 1024px) {
+	.central-position {
+		width: 60%;
+		.password {
+			.password-info {
+				font-size: 1.25rem;
+				padding: 1.125rem;
+			}
+		}
+	}
+}
+@media (min-width: 1280px) {
+	.central-position {
+		width: 50%;
+	}
+}

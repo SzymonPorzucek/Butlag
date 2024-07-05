@@ -1,5 +1,5 @@
-import { validEmail } from './validation.js';
-import { closePopup, showPopup } from './pageFunctions.js';
+import { validEmail } from '../validation.js';
+import { closePopup, showPopup } from '../pageFunctions.js';
 export const initNewsletter = () => {
 	const newsletterInput = document.querySelector('.newsletter__input');
 	const newsletterBtn = document.querySelector('.newsletter-btn');
@@ -40,9 +40,9 @@ export const initNewsletter = () => {
 			timestamp: new Date().toISOString(),
 		};
 		await saveOnMailingList(emailDate);
-		// 
+		//
 		// Delete popup when I'll be done with server setup
-		// 
+		//
 		showPopup(newsletterSuccessInfo);
 		newsletterInput.value = '';
 	};

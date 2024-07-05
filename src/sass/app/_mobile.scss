@@ -1,0 +1,105 @@
+@use '../colors' as *;
+@use '../mixins' as *;
+@use '../animations' as *;
+@use '../components' as *;
+
+.log-in,
+.sign-up {
+	min-height: 100vh;
+	color: var(--secondary-color);
+}
+
+.log-in {
+	@include hero-img-and-shadow(
+		'../../images/app-bck.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	.title-h2 {
+		margin-bottom: 0;
+		font-size: 1.5rem;
+	}
+	&__form {
+		width: 100%;
+	}
+	&__btn {
+		width: 100%;
+		max-width: 350px;
+	}
+	&__guest-mode {
+		cursor: pointer;
+		text-decoration: underline;
+	}
+	&__register {
+		width: 100%;
+		max-width: 450px;
+		text-align: center;
+	}
+}
+.central-position {
+	background-color: var(--primary-color-90p);
+	width: 100%;
+	padding: 2rem;
+	border-radius: 20px;
+	border: 2px solid var(--accent-color);
+}
+.label {
+	display: block;
+	padding: 0.5rem 1rem;
+	font-size: 1.25rem;
+}
+.input {
+	padding: 1rem;
+	font-size: 1.25rem;
+	border: none;
+	border-radius: 20px;
+	width: 100%;
+}
+
+// /////////////////////////
+// sign-in
+// ///////////////////////////
+
+.sign-up {
+	@include hero-img-and-shadow(
+		'../../images/sign-in-bck.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	&__log-in {
+		text-decoration: underline;
+		text-underline-offset: 3px;
+		color: royalblue;
+	}
+	&__register {
+		font-size: 1.125rem;
+	}
+}
+.title-h2 {
+	font-size: 1.5rem;
+}
+.password {
+	position: relative;
+}
+.password-info {
+	position: absolute;
+	left: 5%;
+	top: 0;
+	transform: translateY(-100%);
+	padding: 0.5rem;
+	height: fit-content;
+	width: fit-content;
+	font-size: 1rem;
+	visibility: hidden;
+	opacity: 0;
+	background-color: var(--primary-color-2);
+	border: 1px solid var(--accent-color);
+	border-radius: 5px;
+	transition: visibility 0.3s, opacity 0.3s;
+}
+.help-mark:hover {
+	background-color: var(--accent-color);
+}
+
+.help-mark:hover ~ .password-info {
+	visibility: visible;
+	opacity: 1;
+}

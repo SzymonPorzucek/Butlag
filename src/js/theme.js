@@ -1,22 +1,35 @@
 export const initTheme = () => {
-    const body = document.querySelector('body');
+	const body = document.querySelector('body');
 	const lightThemeBtn = document.querySelector('.light-theme');
 	const darkThemeBtn = document.querySelector('.dark-theme');
-	
 
-    const handleCurrentTheme = () => {
-		darkThemeBtn.classList.toggle('current-theme');
-		lightThemeBtn.classList.toggle('current-theme');
+	const applyTheme = theme => {
+		body.setAttribute('data-mode', theme);
+		localStorage.setItem('theme', theme);
+		handleCurrentTheme(theme);
 	};
-	const handleDarkMode = () => {
+
+	const handleCurrentTheme = theme => {
+		if (theme === 'dark') {
+			darkThemeBtn.classList.add('current-theme');
+			lightThemeBtn.classList.remove('current-theme');
+		} else {
+			darkThemeBtn.classList.remove('current-theme');
+			lightThemeBtn.classList.add('current-theme');
+		}
+	};
+	const toogleTheme = () => {
 		const currentMode = body.getAttribute('data-mode');
 		if (currentMode === 'light') {
-			body.setAttribute('data-mode', 'dark');
+			applyTheme('dark');
 		} else {
-			body.setAttribute('data-mode', 'light');
+			applyTheme('light');
 		}
-		handleCurrentTheme();
 	};
-	lightThemeBtn.addEventListener('click', handleDarkMode);
-	darkThemeBtn.addEventListener('click', handleDarkMode);
-}
+
+	lightThemeBtn.addEventListener('click', toogleTheme);
+	darkThemeBtn.addEventListener('click', toogleTheme);
+
+	const savedTheme = localStorage.getItem('theme') || 'light';
+	applyTheme(savedTheme);
+};

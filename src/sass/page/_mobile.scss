@@ -1,22 +1,7 @@
-@use './colors' as *;
-@use './mixins' as *;
-@use './animations' as *;
-@use './components' as *;
-
-* {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
-}
-html {
-	scroll-behavior: smooth;
-}
-body {
-	position: relative;
-	height: 100%;
-	background-color: var(--primary-color-2);
-}
-
+@use '../colors' as *;
+@use '../mixins' as *;
+@use '../animations' as *;
+@use '../components' as *;
 ///////
 // Nav
 ///////
@@ -84,7 +69,7 @@ body {
 .chevron-up {
 	display: block;
 	background-color: var(--secondary-color);
-	mask: url(../images/chevron-up.svg) center/cover;
+	mask: url(../../images/chevron-up.svg) center/cover;
 	height: 50px;
 	padding: 10px;
 	width: 100%;
@@ -96,7 +81,6 @@ body {
 }
 .theme-icon {
 	display: none;
-
 	background-color: var(--secondary-color);
 	height: 35px;
 	width: 35px;
@@ -104,17 +88,17 @@ body {
 	transition: background-color 0.3s;
 }
 .light-theme {
-	mask: url(../images/sun.svg) center/cover;
+	mask: url(../../images/sun.svg) center/cover;
 }
 .dark-theme {
-	mask: url(../images/moon.svg) center/cover;
+	mask: url(../../images/moon.svg) center/cover;
 }
 .current-theme {
 	display: block;
 }
 .burger-btn {
 	padding: 15px;
-	mask: url(../images/menu.svg) center/cover;
+	mask: url(../../images/menu.svg) center/cover;
 	background-color: var(--secondary-color);
 	height: 50px;
 	width: 50px;
@@ -122,6 +106,7 @@ body {
 	transition: background-color 0.3s;
 }
 .nav-item {
+	white-space: nowrap;
 	transition: color 0.3s;
 	&:hover {
 		color: var(--accent-color);
@@ -142,7 +127,7 @@ body {
 	left: 75%;
 	transform: translate(-50%, -50%);
 	background-color: var(--secondary-color);
-	mask: url(../images/x.svg) center/cover;
+	mask: url(../../images/x.svg) center/cover;
 	height: 70px;
 	width: 70px;
 	transition: background-color 0.3s;
@@ -156,13 +141,18 @@ body {
 	min-height: 400px;
 	height: calc(100vh - 158px);
 	width: 100%;
-	@include hero-img-and-shadow('../images/woman-small.jpg', rgba(0, 0, 0, 0.6));
+	@include hero-img-and-shadow('../../images/woman-small.jpg', rgba(0, 0, 0, 0.6));
 	.title {
 		font-family: 'The Girl Next Door', cursive;
 		line-height: 2.7rem;
 		padding: 30px;
 		font-size: 2.5rem;
 		color: white;
+	}
+	.logo {
+		background-color: white;
+		height: 40px;
+		width: 40px;
 	}
 }
 .chevron-down {
@@ -173,7 +163,7 @@ body {
 	width: 100px;
 	height: 70px;
 	background-color: white;
-	mask: url(../images/chevron-down.svg) center/cover;
+	mask: url(../../images/chevron-down.svg) center/cover;
 	cursor: pointer;
 	transition: background-color 0.3s;
 	animation: bouncing 3s infinite;
@@ -315,7 +305,7 @@ body {
 	align-items: center;
 	min-height: 400px;
 	@include hero-img-and-shadow(
-		'../images/iphone-mail-small.jpg',
+		'../../images/iphone-mail-small.jpg',
 		rgba(0, 0, 0, 0.6)
 	);
 	.wrapper {
@@ -440,9 +430,6 @@ body {
 			font-size: 1.75rem;
 		}
 	}
-	.log-in {
-		width: 100%;
-	}
 	.log-in-btn {
 		text-align: center;
 		width: 80%;
@@ -501,7 +488,6 @@ body {
 	.logo {
 		height: 20px;
 		width: 20px;
-		background-color: var(--secondary-color);
 	}
 	&__social-media {
 		.facebook,
@@ -512,7 +498,7 @@ body {
 			background-color: var(--secondary-color);
 			height: 40px;
 			width: 40px;
-			mask: url(../images/facebook.svg) center/cover;
+			mask: url(../../images/facebook.svg) center/cover;
 			z-index: 22;
 			transition: background-color 0.3s, transform 0.3s;
 			&:hover {
@@ -521,13 +507,13 @@ body {
 			}
 		}
 		.instagram {
-			mask: url(../images/instagram.svg) center/cover;
+			mask: url(../../images/instagram.svg) center/cover;
 		}
 		.twitter {
-			mask: url(../images/twitter.svg) center/cover;
+			mask: url(../../images/twitter.svg) center/cover;
 		}
 		.youtube {
-			mask: url(../images/youtube.svg) center/cover;
+			mask: url(../../images/youtube.svg) center/cover;
 		}
 	}
 }
