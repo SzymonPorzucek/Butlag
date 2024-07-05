@@ -50,9 +50,9 @@ export const initContact = () => {
 	};
 
 	const validAndSend = () => {
-		validName(contactNameInput, contactErrorName, () => {});
-		validEmail(contactEmailInput, contactErrorEmail, () => {});
-		validMsg(contactMsgTextaera, contactErrorMsg, () => {});
+		validName(contactNameInput, contactErrorName);
+		validEmail(contactEmailInput, contactErrorEmail);
+		validMsg(contactMsgTextaera, contactErrorMsg);
 		if (
 			contactErrorName.textContent === '' &&
 			contactErrorMsg.textContent === '' &&

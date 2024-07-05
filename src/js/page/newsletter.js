@@ -50,6 +50,9 @@ export const initNewsletter = () => {
 	closePopup('.newsletter-success-info');
 	newsletterBtn.addEventListener('click', event => {
 		event.preventDefault();
-		validEmail(newsletterInput, newsletterErrorMsg, addEmailToMailingList);
+		validEmail(newsletterInput, newsletterErrorMsg);
+		if (newsletterErrorMsg.textContent === '') {
+			addEmailToMailingList();
+		}
 	});
 };

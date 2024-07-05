@@ -70,7 +70,8 @@ hr {
 }
 .error-msg {
 	width: 100%;
-	height: 30px;
+	min-height: 30px;
+	height: fit-content;
 	font-size: 1.25rem;
 	color: red;
 }
@@ -102,4 +103,29 @@ hr {
 }
 input {
 	color: #222831;
+}
+
+.success-info {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+	background-color: var(--primary-color-50p);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s, visibility 0, 3s;
+	.info-box {
+		min-width: 200px;
+		width: 80%;
+		max-width: 500px;
+		height: fit-content;
+		border-radius: 30px;
+		box-shadow: 0 2px 10px var(--accent-color);
+		background-color: var(--primary-color);
+	}
 }

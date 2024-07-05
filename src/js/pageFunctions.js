@@ -15,7 +15,7 @@ export const initPageFunctions = () => {
 	chevronDown.addEventListener('click', moveToSection);
 };
 
-export function closePopup(ancestorClass) {
+export function closePopup(ancestorClass, redirect = false, href) {
 	const closeBtns = document.querySelectorAll('.close-btn');
 	closeBtns.forEach(function (button) {
 		button.addEventListener('click', function () {
@@ -26,6 +26,9 @@ export function closePopup(ancestorClass) {
 				setTimeout(() => {
 					ancestor.style.display = 'none';
 					document.body.style.overflow = 'visible';
+					if (redirect && href) {
+						window.location.href = `${href}`;
+					}
 				}, 100);
 			}
 		});

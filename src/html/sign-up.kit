@@ -25,9 +25,9 @@
                             <p class="error-msg sign-up-error-name ml-2 mt-2"></p>
                         </div>
                         <div class="lg:max-w-1/2 lg:ml-4">
-                            <label class="sign-up__lastname-label label" for="lastname">Lastname:</label>
+                            <label class="sign-up__lastname-label label" for="lastname">Last name:</label>
                             <input class="sign-up__lastname-input input" type="text" name="lastname" id="lastname">
-                            <p class="error-msg ml-2 mt-2"></p>
+                            <p class="error-msg sign-up-error-lastname ml-2 mt-2"></p>
                         </div>
                     </div>
                     <div class="md:w-3/5">
@@ -44,7 +44,7 @@
                                     <li><strong>❗ 8 characters</strong></li>
                                     <li><strong>❗ 1 capital letter</strong></li>
                                     <li><strong>❗ 2 digits</strong></li>
-                                    <li><strong>❗ 1 special character [!@#$%&*]</strong></li>
+                                    <li><strong>❗ 1 special character [!@#$%^&*(),.?":{}|<>]</strong></li>
                                 </ul>
                             </div>
                         </label>
@@ -63,6 +63,13 @@
                 </form>
             </div>
         </section>
+
+        <div class="success-info">
+            <div class=" info-box container flex flex-col justify-center items-center p-16">
+                <p class="info-text text text-center mb-10">An account was created!</p>
+                <button class="btn close-btn">Continue</button>
+            </div>
+        </div>
 
     </main>
 
