@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	//prettier-ignore
 	const signUpRepeatPasswordError = document.querySelector('.sign-up-error-repeat-password');
 	const signUpSuccesInfo = document.querySelector('.success-info');
+	const signUpErrorInfo = document.querySelector('.error-info');
 
 	const signUpBtn = document.querySelector('.sign-up__register');
-	const closeBtn = document.querySelector('.close-btn');
 
 	const validForm = () => {
 		validName(signUpNameInput, signUpNameError);
@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 			signUpEmailError.textContent === ''
 		) {
 			createNewAccount();
-			console.log(`good`);
 		}
 	};
 
@@ -62,13 +61,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		try {
 			const data = await sendRegistrationData(userData);
 			showPopup(signUpSuccesInfo);
-			signUpNameInput.value = '';
-			signUpLastnameInput.value = '';
-			signUpEmailInput.value = '';
-			signUpPasswordInput.value = '';
-			signUpRepeatPasswordInput.value = '';
+		clearForm()
 		} catch (error) {
 			console.error('Registration failed:', error);
+			showPopup(signUpErrorInfo);
 		}
 	};
 
@@ -96,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// const sendRegistrationData = async userData => {
 	// 	try {
-	// 		const response = await fetch('URL', {
+	// 		const response = await fetch('/api/register', {
 	// 			method: 'POST',
 	// 			headers: {
 	// 				'Content-Type': 'application/json',
@@ -113,8 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	// 		throw error;
 	// 	}
 	// };
+	const clearForm = () => {
+		signUpNameInput.value = '';
+		signUpLastnameInput.value = '';
+		signUpEmailInput.value = '';
+		signUpPasswordInput.value = '';
+		signUpRepeatPasswordInput.value = '';
+	};
 
 	closePopup('.success-info', true, 'log-in.html');
+	closePopup('.error-info');
 
 	signUpBtn.addEventListener('click', event => {
 		event.preventDefault();

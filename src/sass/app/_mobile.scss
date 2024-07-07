@@ -4,7 +4,8 @@
 @use '../components' as *;
 
 .log-in,
-.sign-up {
+.sign-up,
+.forgot-password {
 	min-height: 100vh;
 	color: var(--secondary-color);
 }
@@ -14,6 +15,7 @@
 		'../../images/app-bck.webp',
 		rgba(34, 40, 49, 0.5)
 	);
+	text-underline-offset: 3px;
 	.title-h2 {
 		margin-bottom: 0;
 		font-size: 1.5rem;
@@ -33,6 +35,11 @@
 		width: 100%;
 		max-width: 450px;
 		text-align: center;
+	}
+	&__forgot-password {
+		font-size: 1.125rem;
+		text-decoration: underline;
+		cursor: pointer;
 	}
 }
 .central-position {
@@ -54,6 +61,22 @@
 	border-radius: 20px;
 	width: 100%;
 }
+// /////////////////////////
+// forgot-password
+// ///////////////////////////
+.forgot-password {
+	@include hero-img-and-shadow(
+		'../../images/bck-3.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	.title-h2 {
+		margin-bottom: 0rem;
+	}
+	.arrow-left {
+		display: block;
+		mask: url(../../images/arrow-left-circle.svg) center/cover;
+	}
+}
 
 // /////////////////////////
 // sign-in
@@ -72,7 +95,6 @@
 	&__register {
 		font-size: 1.125rem;
 	}
-	
 }
 .title-h2 {
 	font-size: 1.5rem;
