@@ -13,6 +13,14 @@ body {
 	background-color: var(--primary-color-2);
 }
 
+.burger-btn {
+	mask: url(../../images/menu.svg) center/cover;
+	background-color: var(--secondary-color);
+	height: 50px;
+	width: 50px;
+	cursor: pointer;
+	transition: background-color 0.3s;
+}
 .logo {
 	display: inline-block;
 	background-color: var(--secondary-color);

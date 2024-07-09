@@ -1,11 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ButLag-APP</title>
+    <!-- @include styles-app.kit -->
 </head>
-<body>
-    <p>applikacja</p>
+
+<body data-mode="light">
+
+    <header>
+        <div class="topbar">
+            <div class="wrapper container flex justify-between items-center">
+                <div class="topbar__burger-btn burger-btn"></div>
+                <a href="#">
+                    <h1 class="flex justify-center items-center text">
+                        <span class="logo mr-2"></span>ButLag
+                    </h1>
+                </a>
+            </div>
+        </div>
+        <nav class="nav">
+            <ul class="nav-mobile text">
+                <li class="nav__item--home"><span class="nav__item home"></span>Home</li>
+                <li class="nav__item--shopping-list"><span class="nav__item shopping-list"></span>Shopping List</li>
+                <li class="nav__item--notes"><span class="nav__item notes"></span>Notes</li>
+                <li class="nav__item--todo-list"><span class="nav__item todo-list"></span>To Do List</li>
+                <li class="nav__item--profile"><span class="nav__item profile"></span>Your Profile</li>
+                <li class="nav__item--settings"><span class="nav__item settings"></span>Settings</li>
+            </ul>
+            <div class="nav__overlay"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="home-section flex section" id="home">
+            <p class="text">home</p>
+        </section>
+
+
+
+        <section class="shopping-list-section section hidden" id="shopping-list">
+            <p class="text">shopping-list</p>
+        </section>
+
+
+
+        <section class="notes-section section hidden" id="notes">
+            <p class="text">notes</p>
+        </section>
+
+
+
+        <section class="todo-list-section section hidden" id="todo-list">
+            <p class="text">todo-list</p>
+        </section>
+
+
+
+        <section class="profile-section section hidden" id="profile">
+            <p class="text">profile</p>
+        </section>
+
+
+
+        <section class="settings-section section hidden" id="settings">
+            <p class="text">settings</p>
+        </section>
+
+
+    </main>
+
+    <div class="nav__theme justify-center items-center hidden">
+        <button class="light-theme theme-icon" role="button"></button>
+        <button class="dark-theme current-theme theme-icon" role="button"></button>
+    </div>
+
+
+    <script src="./js/app/app.min.js"></script>
 </body>
+
 </html>
