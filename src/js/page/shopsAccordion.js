@@ -1,3 +1,4 @@
+import { debounce } from "../pageFunctions";
 export const initShopsAccordion = () => {
 	const fadeShop = document.querySelector('.fade-shop');
 	const shopsList = document.querySelector('.shops__box');
@@ -35,19 +36,6 @@ export const initShopsAccordion = () => {
 		}
 	};
 
-	const debounce = (func, wait) => {
-		let timeout;
-		return function (...args) {
-			const context = this;
-
-			const later = () => {
-				clearTimeout(timeout);
-				func.apply(context, args);
-			};
-			clearTimeout(timeout);
-			timeout = setTimeout(later, wait);
-		};
-	};
 
 	handleShops();
 

@@ -7,9 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const nextBtn = document.querySelector('.next-btn');
 	const remindPasswordInput = document.querySelector('.remind-password-input');
-	const remindPasswordErrorMsg = document.querySelector(
-		'.remind-password-error-email'
-	);
+	//prettier-ignore
+	const remindPasswordErrorMsg = document.querySelector('.remind-password-error-email');
 	//prettier-ignore
 	const remindPasswordSuccessInfo = document.querySelector('.success-info');
 	const remindPasswordErrorInfo = document.querySelector('.error-info');

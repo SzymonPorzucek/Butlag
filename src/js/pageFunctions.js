@@ -42,3 +42,17 @@ export const showPopup = popupClass => {
 	}, 100);
 	document.body.style.overflow = 'hidden';
 };
+
+export const debounce = (func, wait) => {
+	let timeout;
+	return function (...args) {
+		const context = this;
+
+		const later = () => {
+			clearTimeout(timeout);
+			func.apply(context, args);
+		};
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+	};
+};

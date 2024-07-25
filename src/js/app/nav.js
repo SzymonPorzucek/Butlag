@@ -1,5 +1,7 @@
+import { debounce } from '../pageFunctions';
 export const initNav = () => {
 	const navMobile = document.querySelector('.nav-mobile');
+	const topbar = document.querySelector('.topbar');
 	const navBurgerBtn = document.querySelector('.topbar__burger-btn');
 	const navHome = document.querySelector('.nav__item--home');
 	const navShoppingList = document.querySelector('.nav__item--shopping-list');
@@ -7,7 +9,7 @@ export const initNav = () => {
 	const navTodoList = document.querySelector('.nav__item--todo-list');
 	const navProfile = document.querySelector('.nav__item--profile');
 	const navSettings = document.querySelector('.nav__item--settings');
-	const navOverlay = document.querySelector('.nav__overlay');
+	const navOverlay = document.querySelector('.overlay');
 
 	const allSections = document.querySelectorAll('.section');
 	const homeSection = document.querySelector('#home');
@@ -16,6 +18,8 @@ export const initNav = () => {
 	const todoListSection = document.querySelector('#todo-list');
 	const profileSection = document.querySelector('#profile');
 	const settingsSection = document.querySelector('#settings');
+
+	const notifications = document.querySelector('.notifications');
 
 	const navItems = [
 		{ button: navHome, section: homeSection },
@@ -28,6 +32,27 @@ export const initNav = () => {
 	let startX;
 	let endX;
 	let currentNavPosition = -100;
+
+	const setScrollbarWidth = () => {
+		const getScrollbarWidth = () => {
+			const scrollDiv = document.createElement('div');
+			scrollDiv.style.visibility = 'hidden';
+			scrollDiv.style.overflow = 'scroll';
+			scrollDiv.style.width = '100px';
+			scrollDiv.style.height = '100px';
+			document.body.appendChild(scrollDiv);
+
+			const scrollbarWidth = 8 + scrollDiv.offsetWidth - scrollDiv.clientWidth;
+			document.body.removeChild(scrollDiv);
+			return scrollbarWidth;
+		};
+		const scrollbarWidth = getScrollbarWidth();
+		document.documentElement.style.setProperty(
+			'--scrollbar-width',
+			`${getScrollbarWidth()}px`
+		);
+	};
+
 	const handleMobileMenu = () => {
 		if (navMobile.classList.contains('nav-mobile-active')) {
 			closeMobileNav();
@@ -35,11 +60,17 @@ export const initNav = () => {
 			showNav();
 		}
 	};
+
 	const showNav = () => {
+		if (notifications.classList.contains('notifications-active')) {
+			return;
+		}
 		navMobile.classList.add('nav-mobile-active');
 		navOverlay.classList.add('nav-mobile-active');
 		navMobile.style.transform = 'translateX(0)';
 		currentNavPosition = 0;
+		topbar.classList.add('lock-scroll');
+		document.body.style.overflow = 'hidden';
 	};
 
 	const closeMobileNav = () => {
@@ -47,6 +78,8 @@ export const initNav = () => {
 		navOverlay.classList.remove('nav-mobile-active');
 		navMobile.style.transform = 'translateX(-100%)';
 		currentNavPosition = -100;
+		topbar.classList.remove('lock-scroll');
+		document.body.style.overflow = 'visible';
 	};
 
 	const handleTouchStart = e => {
@@ -74,7 +107,11 @@ export const initNav = () => {
 		}
 	};
 	const handleClickOutside = e => {
-		if (e.target === navOverlay) {
+		if (
+			navMobile.classList.contains('nav-mobile-active') &&
+			!navMobile.contains(e.target) &&
+			!navBurgerBtn.contains(e.target)
+		) {
 			closeMobileNav();
 		}
 	};
@@ -82,18 +119,22 @@ export const initNav = () => {
 	const moveToSection = section => {
 		allSections.forEach(item => {
 			item.classList.add('hidden');
-		});
-		setTimeout(() => {
 			section.classList.remove('hidden');
 			section.classList.add('flex');
-		}, 400);
+			window.scrollTo({
+				top: 0,
+				behavior: 'smooth',
+			});
+		});
 	};
-    navItems.forEach(item=>{
-        item.button.addEventListener('click',()=>{
-            moveToSection(item.section)
-        })
-    })
-
+	navItems.forEach(item => {
+		item.button.addEventListener('click', () => {
+			moveToSection(item.section);
+			closeMobileNav();
+		});
+	});
+	setScrollbarWidth();
+	window.addEventListener('resize', debounce(setScrollbarWidth, 200));
 	navBurgerBtn.addEventListener('click', handleMobileMenu);
 	navMobile.addEventListener('touchstart', handleTouchStart);
 	navMobile.addEventListener('touchmove', handleTouchMove);
