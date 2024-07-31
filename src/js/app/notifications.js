@@ -3,10 +3,15 @@ export const initNotifications = () => {
 	const overlay = document.querySelector('.overlay');
 	const notificationsBox = document.querySelector('.notifications');
 	const notificationsBtn = document.querySelector('.topbar__bell');
+	const notificationsIndicator = document.querySelector(
+		'.topbar__bell-indicator'
+	);
 	const navMobile = document.querySelector('.nav-mobile');
 
 	let startX;
 	let endX;
+	let startY;
+	let endY;
 	let currentNotificationsPosition = 0;
 	const showNotifications = () => {
 		if (navMobile.classList.contains('nav-mobile-active')) {
@@ -28,8 +33,7 @@ export const initNotifications = () => {
 		topbar.classList.remove('lock-scroll');
 		document.body.style.overflow = 'visible';
 	};
-	const handleNotifications = e => {
-		e.stopPropagation();
+	const handleNotifications = () => {
 		if (notificationsBox.classList.contains('notifications-active')) {
 			closeNotifications();
 		} else {
@@ -48,26 +52,32 @@ export const initNotifications = () => {
 
 	const handleTouchStart = e => {
 		startX = e.touches[0].clientX;
+		startY = e.touches[0].clientY;
 		notificationsBox.style.transition = 'none';
 	};
 	const handleTouchMove = e => {
 		endX = e.touches[0].clientX;
-		const translateX = Math.min(
+		endY = e.touches[0].clientY;
+		const diffX = Math.abs(endX - startX);
+		const diffY = Math.abs(endY - startY);
+		let translateX = Math.min(
 			0,
 			currentNotificationsPosition +
 				((endX - startX) / notificationsBox.offsetWidth) * 100
 		);
-		if (translateX < -100) {
-			translateX = -100;
+		if (diffX > diffY) {
+			if (translateX < -100) {
+				translateX = -100;
+			}
+			notificationsBox.style.transform = `translateX(${translateX}%)`;
 		}
-
-		notificationsBox.style.transform = `translateX(${translateX}%)`;
 	};
 
 	const handleTouchEnd = () => {
 		const translateX =
 			currentNotificationsPosition +
 			((endX - startX) / notificationsBox.offsetWidth) * 100;
+
 		notificationsBox.style.transition = 'transform 0.5s ease';
 		if (translateX < -50) {
 			showNotifications();
@@ -157,6 +167,7 @@ export const initNotifications = () => {
 			);
 			notificationsBox.prepend(notificationItem);
 		});
+		updateNotificationsBtn();
 	};
 
 	const markAsRead = id => {
@@ -174,6 +185,7 @@ export const initNotifications = () => {
 			notificationTitle.classList.add('notifications-seen');
 			notificationNewMark.style.display = 'none';
 			updateNotificationInStorage(id, true);
+			updateNotificationsBtn();
 		}
 	};
 	const updateNotificationInStorage = (id, readStatus) => {
@@ -214,6 +226,21 @@ export const initNotifications = () => {
 		if (event.key === 'notifications') {
 			notificationsBox.innerHTML = '';
 			fetchNotifications();
+		}
+	};
+	const checkForNewNotifications = () => {
+		const newNotifications = document.querySelectorAll(
+			'.notifications-new:not(.hidden)'
+		);
+		return newNotifications.length > 0;
+	};
+	const updateNotificationsBtn = () => {
+		if (checkForNewNotifications()) {
+			notificationsIndicator.classList.add('has-new');
+			notificationsBtn.classList.add('has-new');
+		} else {
+			notificationsIndicator.classList.remove('has-new');
+			notificationsBtn.classList.remove('has-new');
 		}
 	};
 

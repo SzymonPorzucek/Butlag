@@ -21,6 +21,7 @@ export const initNav = () => {
 
 	const notifications = document.querySelector('.notifications');
 
+
 	const navItems = [
 		{ button: navHome, section: homeSection },
 		{ button: navShoppingList, section: shoppingListSection },
@@ -29,6 +30,7 @@ export const initNav = () => {
 		{ button: navProfile, section: profileSection },
 		{ button: navSettings, section: settingsSection },
 	];
+	
 	let startX;
 	let endX;
 	let currentNavPosition = -100;
@@ -69,6 +71,7 @@ export const initNav = () => {
 		navOverlay.classList.add('nav-mobile-active');
 		navMobile.style.transform = 'translateX(0)';
 		currentNavPosition = 0;
+		
 		topbar.classList.add('lock-scroll');
 		document.body.style.overflow = 'hidden';
 	};
@@ -78,6 +81,7 @@ export const initNav = () => {
 		navOverlay.classList.remove('nav-mobile-active');
 		navMobile.style.transform = 'translateX(-100%)';
 		currentNavPosition = -100;
+		;
 		topbar.classList.remove('lock-scroll');
 		document.body.style.overflow = 'visible';
 	};

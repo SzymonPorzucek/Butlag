@@ -19,7 +19,10 @@
                         <span class="logo mr-2"></span>ButLag
                     </h1>
                 </a>
-                <div class="topbar__bell ui-icon"></div>
+                <div class="topbar__bell-container">
+                    <div class="topbar__bell ui-icon"></div>
+                    <div class="topbar__bell-indicator"></div>
+                </div>
             </div>
         </div>
         <nav class="nav">
@@ -41,92 +44,63 @@
 
     <main>
         <section class="home-section hidden section" id="home">
-            <p class="text">home</p>
+            <div class="home-section__box section-box">
+                <h2 class="section-title">Home</h2>
+
+            </div>
         </section>
 
-
-
         <section class="shopping-list-section section flex" id="shopping-list">
-            <div class="shopping-list-section__box">
-                <h2 class="section-title">Create your shopping list</h2>
-                <div class="shopping-list-item shopping-list-item__add-new">
-                    <div class="flex justify-center items-center h-full flex-col">
-                        <p class="shopping-list-item__title">ADD</p>
+            <div class="shopping-list-section__box section-box">
+                <h2 class="section-title">Your shopping lists</h2>
+
+                <div class="flex flex-col items-center justify-center w-full" id="sl-add-new-container">
+
+                    <div class="shopping-list-item" id="sl-card-add-new">
+                        <p class="shopping-list-item__title">ADD NEW</p>
                         <div class="plus-circle"></div>
                     </div>
-                    <div class="shopping-list-item__search-box">
-                        <div class="ui-icons flex justify-between mx-10 mt-8">
-                            <div class="ui-icon arrow-left"></div>
-                            <div class="ui-icon save"></div>
-                        </div>
-                        <div class="mt-6 flex flex-col items-center">
-                            <input type="text" placeholder="Search for products..." class="search-input">
-                            <p class="search-results-error error-msg mt-2"></p>
-                        </div>
-                        <div class="search-results-box">
-                        </div>
+                </div>
 
-                        <div class="w-full flex justify-center my-4">
-                            <p class="text">- chosen products -</p>
-                        </div>
+                <div class="flex flex-col items-center justify-center w-full" id="shopping-lists-container">
+                </div>
 
-                        <div class="shopping-list-to-save-box">
-
-                            <div class="product-to-save">
-                                <div class="image-box">
-                                    <img class="result-img" src="https://bilder.ngdata.no/4030/kmh/large.jpg"
-                                        alt="Product Image">
-                                </div>
-                                <div class="result-info">
-                                    <p class="result-info-name">Kiwi stykk Lorem ipsum dolor, sit</p>
-                                    <div>
-                                        <p class="result-info-store">Store: SPAR</p>
-                                        <p class="result-info-price">10.9 ,-</p>
-                                    </div>
-                                </div>
-                                <div class="delete-btn ui-icon"></div>
-                            </div>
-
-                            <div class="product-to-save">
-                                <div class="image-box">
-                                    <img class="result-img" src="https://bilder.ngdata.no/4030/kmh/large.jpg"
-                                        alt="Product Image">
-                                </div>
-                                <div class="result-info">
-                                    <p class="result-info-name">Kiwi stykk Lorem ipsum dolor, sit</p>
-                                    <div>
-                                        <p class="result-info-store">Store: SPAR</p>
-                                        <p class="result-info-price">10.9 ,-</p>
-                                    </div>
-                                </div>
-                                <div class="delete-btn ui-icon"></div>
-                            </div>
-
-                            <div class="product-to-save">
-                                <div class="image-box">
-                                    <img class="result-img" src="https://bilder.ngdata.no/4030/kmh/large.jpg"
-                                        alt="Product Image">
-                                </div>
-                                <div class="result-info">
-                                    <p class="result-info-name">Kiwi stykk Lorem ipsum dolor, sit</p>
-                                    <div>
-                                        <p class="result-info-store">Store: SPAR</p>
-                                        <p class="result-info-price">10.9 ,-</p>
-                                    </div>
-                                </div>
-                                <div class="delete-btn ui-icon"></div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="w-full flex justify-center my-4">
-                            <button type="button" class="delete-all-btn btn">Delete all</button>
-                        </div>
+                <div class="flex flex-col items-center justify-center w-full">
+                    <div class="shopping-list-item shopping-list-item__delete-all" id="sl-card-delete-all">
+                        <p class="shopping-list-item__title">DELETE ALL</p>
+                        <div class="delete-all-lists"></div>
                     </div>
-
                 </div>
             </div>
+
+
+
+            <div class="shopping-list-item__search-box">
+                <div class="ui-icons flex justify-between mx-10 mt-8">
+                    <div class="ui-icon arrow-left"></div>
+
+                    <div class="ui-icon save" id="save-add-new"></div>
+                </div>
+                <div class="mt-6 flex flex-col items-center">
+                    <input type="text" placeholder="Search for products..." class="search-input">
+                    <p class="search-results-error error-msg mt-2"></p>
+                </div>
+
+                <div class="search-results-box"></div>
+
+                <div class="w-full flex justify-center flex-col items-center my-4">
+                    <p class="text">- chosen products -</p>
+                    <p class="info-area"> </p>
+                </div>
+
+                <div class="shopping-list-to-save-box"></div>
+
+                <div class="w-full flex justify-center my-4">
+                    <button type="button" class="delete-all-btn btn">Delete all</button>
+                </div>
+
+            </div>
+
         </section>
 
 
