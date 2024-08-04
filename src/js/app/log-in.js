@@ -1,6 +1,6 @@
 import { initTheme } from '../theme.js';
 import { validEmail } from '../validation.js';
-import { showPopup, closePopup } from '../pageFunctions.js';
+import { closePopup } from '../pageFunctions.js';
 document.addEventListener('DOMContentLoaded', () => {
 	initTheme();
 
@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	};
 
 	const logIn = () => {
+		sessionStorage.setItem('authToken', 'userLoggedIn');
 		window.location.href = 'app.html';
 	};
 

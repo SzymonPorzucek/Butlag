@@ -1,0 +1,1 @@
+This is an application to create shopping lists, where you are able to use real products occur in norwegian stores. You have acces to current price, images and get known which stores products are able to buy. This is my privat frontend project, but it will be develop in time.

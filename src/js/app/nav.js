@@ -8,8 +8,18 @@ export const initNav = () => {
 	const navNotes = document.querySelector('.nav__item--notes');
 	const navTodoList = document.querySelector('.nav__item--todo-list');
 	const navProfile = document.querySelector('.nav__item--profile');
-	const navSettings = document.querySelector('.nav__item--settings');
+	
 	const navOverlay = document.querySelector('.overlay');
+
+	const shortcutShoppingList = document.querySelector(
+		'.home-section__shortcuts--shopping-list'
+	);
+	const shortcutNotes = document.querySelector(
+		'.home-section__shortcuts--notes'
+	);
+	const shortcutTodoList = document.querySelector(
+		'.home-section__shortcuts--todo-list'
+	);
 
 	const allSections = document.querySelectorAll('.section');
 	const homeSection = document.querySelector('#home');
@@ -17,10 +27,9 @@ export const initNav = () => {
 	const notesSection = document.querySelector('#notes');
 	const todoListSection = document.querySelector('#todo-list');
 	const profileSection = document.querySelector('#profile');
-	const settingsSection = document.querySelector('#settings');
+
 
 	const notifications = document.querySelector('.notifications');
-
 
 	const navItems = [
 		{ button: navHome, section: homeSection },
@@ -28,9 +37,12 @@ export const initNav = () => {
 		{ button: navNotes, section: notesSection },
 		{ button: navTodoList, section: todoListSection },
 		{ button: navProfile, section: profileSection },
-		{ button: navSettings, section: settingsSection },
-	];
 	
+		{ button: shortcutShoppingList, section: shoppingListSection },
+		{ button: shortcutNotes, section: notesSection },
+		{ button: shortcutTodoList, section: todoListSection },
+	];
+
 	let startX;
 	let endX;
 	let currentNavPosition = -100;
@@ -71,7 +83,7 @@ export const initNav = () => {
 		navOverlay.classList.add('nav-mobile-active');
 		navMobile.style.transform = 'translateX(0)';
 		currentNavPosition = 0;
-		
+
 		topbar.classList.add('lock-scroll');
 		document.body.style.overflow = 'hidden';
 	};
@@ -81,7 +93,6 @@ export const initNav = () => {
 		navOverlay.classList.remove('nav-mobile-active');
 		navMobile.style.transform = 'translateX(-100%)';
 		currentNavPosition = -100;
-		;
 		topbar.classList.remove('lock-scroll');
 		document.body.style.overflow = 'visible';
 	};

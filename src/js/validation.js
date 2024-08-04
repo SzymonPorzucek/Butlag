@@ -73,3 +73,11 @@ export const validNewPassword = (
 		errorMsgRepeat.textContent = 'Passwords are not the same.';
 	}
 };
+export const validCheckBox = (checkbox, errorMsg, event) => {
+	if (!checkbox.checked) {
+		event.preventDefault();
+		errorMsg.textContent = 'Accept terms and conditions!';
+	} else {
+		errorMsg.textContent = '';
+	}
+};

@@ -5,6 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ButLag - Sign up</title>
+    <meta name="description" content="Sign up for ButLag to create personalized shopping lists, notebooks, and to-do lists.">
+    <meta name="keywords" content="sign up, ButLag, shopping lists, notebooks, to-do lists, create account">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" type="image/png">
     <!-- @include styles-app.kit -->
 </head>
 
@@ -14,7 +20,8 @@
             <div class="central-position container flex flex-col items-center">
                 <header class="sign-up__header w-full flex flex-col items-center md:my-10">
                     <h1 class="title-h2">Create new account</h1>
-                    <p class="text-center w-[20ch] sm:w-full text-xl">Do you have an account? <a class="sign-up__log-in" href="log-in.html">Log
+                    <p class="text-center w-[20ch] sm:w-full text-xl">Do you have an account? <a class="sign-up__log-in"
+                            href="log-in.html">Log
                             in.</a></p>
                 </header>
                 <form class="sign-up__form flex flex-col items-center w-full">
@@ -39,7 +46,8 @@
 
                         <label class="sign-up__password-label label" for="password"><span class="help-mark"></span>
                             Password:
-                            <div class="password-info" role="region" aria-label="Password requirements">Password must have at least:
+                            <div class="password-info" role="region" aria-label="Password requirements">Password must
+                                have at least:
                                 <ul>
                                     <li><strong>❗ 8 characters</strong></li>
                                     <li><strong>❗ 1 capital letter</strong></li>
@@ -59,6 +67,13 @@
                             id="repeat-password">
                         <p class="error-msg sign-up-error-repeat-password ml-2 my-2"></p>
                     </div>
+                    <div class="md:w-3/5 flex items-center justify-center">
+                        <input class="terms-check-box" type="checkbox" name="terms" id="terms-check-box" required>
+                        <label for="terms-check-box" class="label">
+                            I agree the terms and conditions.
+                        </label>
+                    </div>
+                    <p class="error-msg terms-error-msg"></p>
                     <button type="submit" class="sign-up__register btn mt-2 md:mb-8">Create new account</button>
                 </form>
             </div>

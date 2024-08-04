@@ -5,6 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ButLag-APP</title>
+    <meta name="description"
+        content="Manage your shopping lists, notes, and to-do lists with ButLag. Plan your shopping efficiently and keep track of everything.">
+    <meta name="keywords" content="ButLag, shopping lists, notes, to-do lists, shopping planner, productivity app">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" type="image/png">
     <!-- @include styles-app.kit -->
 </head>
 
@@ -32,7 +39,7 @@
                 <li class="nav__item--notes"><span class="nav__item notes"></span>Notes</li>
                 <li class="nav__item--todo-list"><span class="nav__item todo-list"></span>To Do List</li>
                 <li class="nav__item--profile"><span class="nav__item profile"></span>Your Profile</li>
-                <li class="nav__item--settings"><span class="nav__item settings"></span>Settings</li>
+
             </ul>
             <div class="overlay"></div>
         </nav>
@@ -43,36 +50,57 @@
     </header>
 
     <main>
-        <section class="home-section hidden section" id="home">
+        <section class="home-section flex section" id="home">
             <div class="home-section__box section-box">
                 <h2 class="section-title">Home</h2>
+                <div
+                    class="home-section__shortcuts container mt-10 flex flex-col md:flex-row items-center flex-wrap justify-center lg:justify-around">
+                    <div class="home-section__shortcuts--shopping-list home-section__shortcut">
+                        <p class="section-title py-4 ">Shoping List</p>
+                        <p class="section-quantity" id="shopping-list-quantity"></p>
+
+                    </div>
+                    <div class="home-section__shortcuts--notes home-section__shortcut">
+                        <p class="section-title py-4 ">Notes</p>
+                        <p class="section-quantity"></p>
+                    </div>
+                    <div class="home-section__shortcuts--todo-list home-section__shortcut">
+                        <p class="section-title py-4 ">To Do List</p>
+                        <p class="section-quantity"></p>
+                    </div>
+
+                </div>
 
             </div>
         </section>
 
-        <section class="shopping-list-section section flex" id="shopping-list">
+        <section class="shopping-list-section section hidden" id="shopping-list">
             <div class="shopping-list-section__box section-box">
                 <h2 class="section-title">Your shopping lists</h2>
 
-                <div class="flex flex-col items-center justify-center w-full" id="sl-add-new-container">
+                <div class="flex justify-start items-start w-full container flex-wrap">
 
-                    <div class="shopping-list-item" id="sl-card-add-new">
-                        <p class="shopping-list-item__title">ADD NEW</p>
-                        <div class="plus-circle"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-center w-full" id="sl-add-new-container">
+
+                        <div class="shopping-list-item shopping-list-item-func" id="sl-card-add-new">
+                            <p class="shopping-list-item__title">ADD NEW</p>
+                            <div class="plus-circle"></div>
+                        </div>
                     </div>
-                </div>
 
-                <div class="flex flex-col items-center justify-center w-full" id="shopping-lists-container">
-                </div>
+                    <div class="flex flex-col md:flex-row items-center justify-center w-full flex-wrap"
+                        id="shopping-lists-container">
+                    </div>
 
-                <div class="flex flex-col items-center justify-center w-full">
-                    <div class="shopping-list-item shopping-list-item__delete-all" id="sl-card-delete-all">
-                        <p class="shopping-list-item__title">DELETE ALL</p>
-                        <div class="delete-all-lists"></div>
+                    <div class="flex flex-col md:flex-row items-center justify-center w-full">
+                        <div class="shopping-list-item shopping-list-item-func shopping-list-item__delete-all flex flex-col justify-center items-center"
+                            id="sl-card-delete-all">
+                            <p class="shopping-list-item__title text-center">DELETE ALL</p>
+                            <div class="delete-all-lists"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-
 
 
             <div class="shopping-list-item__search-box">
@@ -106,35 +134,70 @@
 
 
         <section class="notes-section section hidden" id="notes">
-            <p class="text">notes</p>
+            <div class="notes-section__box section-box">
+                <h2 class="section-title">Notes</h2>
+                <p class="empty">This section is in progress.</p>
+            </div>
         </section>
 
 
 
         <section class="todo-list-section section hidden" id="todo-list">
-            <p class="text">todo-list</p>
+            <div class="todo-list-section__box section-box">
+                <h2 class="section-title">To Do List</h2>
+                <p class="empty">This section is in progress.</p>
+            </div>
         </section>
 
 
 
         <section class="profile-section section hidden" id="profile">
-            <p class="text">profile</p>
+            <div class="profile-section__box section-box">
+                <h2 class="section-title">Profile details</h2>
+                <div class="settings-container w-full flex flex-col items-center justify-center">
+                    <div class="profile-section-item flex justify-around items-center w-full m-4">
+                        <p class="text">Theme:</p>
+                        <div class="nav__theme justify-center items-center ">
+                            <button class="light-theme ui-icon" role="button"></button>
+                            <button class="dark-theme current-theme ui-icon" role="button"></button>
+                        </div>
+                    </div>
+
+                    <div class="profile-section-item is-log-in-container hidden justify-around items-center w-full m-4">
+                        <p class="text text-center">You are not log in.
+                            <br>
+                            <a href="sign-up.html">Sign up</a> now!
+                        </p>
+
+                    </div>
+                </div>
+                <div class="profile-container flex w-full justify-center flex-col items-center">
+
+                    <div class="profile-section-item flex justify-between items-center w-full m-4">
+                        <p class="text ml-4">Name:</p>
+                        <p class="text mr-4 profile-name"></p>
+                    </div>
+                    <div class="profile-section-item flex justify-between items-center w-full m-4">
+                        <p class="text ml-4">Last name:</p>
+                        <p class="text mr-4 profile-last-name"></p>
+                    </div>
+                    <div class="profile-section-item flex  flex-wrap justify-between items-center w-full m-4">
+                        <p class="text ml-4">Email:</p>
+                        <p class="text mr-4 profile-email"></p>
+                    </div>
+
+                </div>
+
+            </div>
+
         </section>
 
 
 
-        <section class="settings-section section hidden" id="settings">
-            <p class="text">settings</p>
-        </section>
+
 
 
     </main>
-
-    <div class="nav__theme justify-center items-center hidden">
-        <button class="light-theme ui-icon" role="button"></button>
-        <button class="dark-theme current-theme ui-icon" role="button"></button>
-    </div>
-
 
     <script src="./js/app/app.min.js"></script>
 </body>

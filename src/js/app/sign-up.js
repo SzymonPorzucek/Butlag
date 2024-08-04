@@ -4,6 +4,7 @@ import {
 	validLastname,
 	validEmail,
 	validNewPassword,
+	validCheckBox,
 } from '../validation.js';
 import { showPopup, closePopup } from '../pageFunctions.js';
 
@@ -30,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const signUpBtn = document.querySelector('.sign-up__register');
 
+	const singUpTermsCheckBox = document.querySelector('.terms-check-box');
+	const singUpTermsErrorMsg = document.querySelector('.terms-error-msg');
+
 	const validForm = () => {
 		validName(signUpNameInput, signUpNameError);
 		validLastname(signUpLastnameInput, signUpLastnameError);
@@ -40,11 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
 			signUpRepeatPasswordInput,
 			signUpRepeatPasswordError
 		);
+		validCheckBox(singUpTermsCheckBox, singUpTermsErrorMsg, event);
 		if (
 			signUpNameError.textContent === '' &&
 			signUpLastnameError.textContent === '' &&
 			signUpPasswordError.textContent === '' &&
-			signUpEmailError.textContent === ''
+			signUpEmailError.textContent === '' &&
+			singUpTermsErrorMsg.textContent === ''
 		) {
 			createNewAccount();
 		}
@@ -61,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		try {
 			const data = await sendRegistrationData(userData);
 			showPopup(signUpSuccesInfo);
-		clearForm()
+			clearForm();
 		} catch (error) {
 			console.error('Registration failed:', error);
 			showPopup(signUpErrorInfo);

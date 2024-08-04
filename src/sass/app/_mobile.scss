@@ -126,6 +126,10 @@
 	visibility: visible;
 	opacity: 1;
 }
+.terms-check-box {
+	height: 25px;
+	width: 25px;
+}
 
 // /////////////////////////////////////////////
 // APP
@@ -229,6 +233,7 @@
 		top: 89px;
 		height: calc(100vh - 89px);
 		width: 85vw;
+		max-width: 450px;
 		transform: translateX(-100%);
 		transition: transform 0.5s;
 		z-index: 11;
@@ -256,7 +261,7 @@
 	left: 0;
 	top: 89px;
 	width: 100%;
-	min-height: 100vh;
+	min-height: calc(100vh - 89px);
 }
 .notifications {
 	position: fixed;
@@ -264,6 +269,7 @@
 	top: 89px;
 	height: calc(100vh - 89px);
 	width: 65vw;
+	max-width: 450px;
 	background-color: var(--primary-color);
 	transform: translateX(-0%);
 	transition: transform 0.5s;
@@ -306,7 +312,8 @@
 	background-attachment: fixed;
 }
 
-.shopping-list-item {
+.shopping-list-item,
+.home-section__shortcut {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -329,7 +336,7 @@
 	}
 	&__title {
 		color: var(--secondary-color);
-		font-size: 2rem;
+		font-size: 1.75rem;
 		letter-spacing: 3px;
 		font-weight: 600;
 		transition: color 0.3s;
@@ -337,9 +344,9 @@
 	&__delete-all {
 		background-color: var(--footer-color);
 	}
-	.delete-list-btn{
+	.delete-list-btn {
 		top: 10px;
-	right: 10px;
+		right: 10px;
 	}
 	.plus-circle,
 	.delete-all-lists {
@@ -490,4 +497,87 @@
 		rgba(34, 40, 49, 0.5)
 	);
 	background-attachment: fixed;
+
+	&__shortcut {
+		overflow: hidden;
+		justify-content: start;
+		height: 300px;
+	}
+	.home-section__shortcuts--shopping-list {
+		@include hero-img-and-shadow(
+			'../../images/shopping-list-bck.webp',
+			rgba(34, 40, 49, 0.5)
+		);
+	}
+	.home-section__shortcuts--notes {
+		@include hero-img-and-shadow(
+			'../../images/notes-bck.webp',
+			rgba(34, 40, 49, 0.5)
+		);
+	}
+	.home-section__shortcuts--todo-list {
+		@include hero-img-and-shadow(
+			'../../images/todo-list-bck.webp',
+			rgba(34, 40, 49, 0.5)
+		);
+	}
+	.section-title {
+		border-bottom: 1px solid var(--accent-color);
+	}
+}
+
+.section-quantity {
+	position: absolute;
+	left: 50%;
+	top: calc(50% + 40px);
+	transform: translate(-50%, -50%);
+	color: white;
+	font-weight: bold;
+	font-size: 5.5rem;
+	z-index: 12;
+}
+
+.notes-section {
+	@include hero-img-and-shadow(
+		'../../images/notes-bck.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	background-attachment: fixed;
+}
+.todo-list-section {
+	@include hero-img-and-shadow(
+		'../../images/todo-list-bck.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	background-attachment: fixed;
+}
+.shopping-list-item.shopping-list-item-func {
+	max-width: 80%;
+}
+.profile-section {
+	@include hero-img-and-shadow(
+		'../../images/profile-bck.webp',
+		rgba(34, 40, 49, 0.5)
+	);
+	background-attachment: fixed;
+	.profile-section-item {
+		background-color: var(--primary-color-90p);
+
+		width: 80%;
+		max-width: 700px;
+		padding: 1rem;
+		border: 1px solid var(--accent-color);
+		border-radius: 20px;
+	}
+	.text {
+		padding: 0;
+	}
+	.profile-email {
+		text-align: center;
+		word-break: break-word;
+	}
+	a {
+		color: royalblue;
+		text-decoration: underline;
+	}
 }

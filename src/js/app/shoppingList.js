@@ -34,6 +34,10 @@ export const initShoppingList = () => {
 	const chosenProductsInfoArea = document.querySelector('.info-area');
 	//prettier-ignore
 	const deleteAllShoppingListsBtn = document.querySelector('#sl-card-delete-all');
+
+	const shoppingListQuantity = document.querySelector(
+		'#shopping-list-quantity'
+	);
 	let productsToSaveArr = [];
 	let currentListId = null;
 
@@ -303,6 +307,7 @@ export const initShoppingList = () => {
 				}
 			});
 			shoppingListsContainer.appendChild(shoppingListItem);
+			displayListsQuantity();
 		});
 	};
 	const handleDeleteList = e => {
@@ -316,12 +321,21 @@ export const initShoppingList = () => {
 
 	const loadExistingLists = () => {
 		createNewList();
+		displayListsQuantity();
 	};
 	const deleteAllShoppingLists = () => {
 		const shoppingListsArr = getShoppingList();
 		shoppingListsArr.length = 0;
 		saveShoppingLists(shoppingListsArr);
 		loadExistingLists();
+	};
+	const displayListsQuantity = () => {
+		const shoppingListsArr = getShoppingList();
+		if (!shoppingListsArr||shoppingListsArr.length === 0) {
+			shoppingListQuantity.textContent = '0';
+		} else {
+			shoppingListQuantity.textContent = `${shoppingListsArr.length}`;
+		}
 	};
 
 	loadExistingLists();

@@ -5,8 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ButLag - Log in</title>
+    <meta name="description"
+        content="Log in to ButLag to access your personalized shopping lists, notebooks, and to-do lists.">
+    <meta name="keywords" content="log in, ButLag, shopping lists, notebooks, to-do lists, user account">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" href="../images/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="../images/favicon-192x192.png" sizes="192x192" type="image/png">
     <!-- @include styles-app.kit -->
 </head>
+
 
 <body data-mode="light">
     <main>
@@ -44,20 +52,22 @@
                     </a>
                     <button type="submit" class="log-in__btn btn mt-6 my-4">Log in</button>
                 </form>
-                <p class="mb-8 text-center text-xl"><a href="app.html" class="log-in__guest-mode">Continue as a guest</a> or:</p>
+                <p class="mb-8 text-center text-xl"><a href="app.html" class="log-in__guest-mode">Continue as a
+                        guest</a> or:</p>
                 <a href="sign-up.html" class="log-in__register btn md:mb-8">Sign up</a>
-       
 
 
 
 
-        <div class="popup-info error-info">
-            <div class=" info-box container flex flex-col justify-center items-center p-16">
-                <p class="info-text text text-center mb-10">Something went worng. <br>Please try again leter!</p>
-                <button class="btn close-btn">Continue</button>
-            </div>
-        </div>
- </section>
+
+                <div class="popup-info error-info">
+                    <div class=" info-box container flex flex-col justify-center items-center p-16">
+                        <p class="info-text text text-center mb-10">Something went worng. <br>Please try again leter!
+                        </p>
+                        <button class="btn close-btn">Continue</button>
+                    </div>
+                </div>
+        </section>
 
         <script src="./js/app/log-in.min.js"></script>
 </body>

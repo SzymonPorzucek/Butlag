@@ -194,3 +194,12 @@ input {
 		background-color: red;
 	}
 }
+.empty{
+	padding: 2rem;
+	margin-top: 2rem;
+	background-color: var(--primary-color-90p);
+	border: 1px solid var(--accent-color);
+	font-size: 2rem;
+	color: var(--secondary-color);
+	border-radius: 20px;
+}
