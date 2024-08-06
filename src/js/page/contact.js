@@ -10,43 +10,32 @@ export const initContact = () => {
 	const contactErrorMsg = document.querySelector('.contact-error-msg');
 	const contactSuccessInfo = document.querySelector('.contact-success-info');
 
-
-	
 	const sendMsg = async contactData => {
-		//
-		// Delete popup when I'll be done with server setup
-		//
-		showPopup(contactSuccessInfo);
-		contactNameInput.value = '';
-		contactEmailInput.value = '';
-		contactMsgTextaera.value = '';
-
+		const mailUrl = 'https://butlag.com/send_email.php';
 		try {
-			// Server URL
-			const response = await fetch('URL', {
+			const response = await fetch(mailUrl, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(contactData),
 			});
+			
+			console.log(JSON.stringify(contactData));
 			if (!response.ok) {
 				throw new Error('Network is not responsing');
 			}
-			//
-			// Uncomment when I'll be done with server setup
-			//
-			// showPopup(contactSuccessInfo);
-			// contactNameInput.value = '';
-			// contactEmailInput.value = '';
-			// contactMsgTextaera.value = '';
+		console.log(mailUrl);
+			showPopup(contactSuccessInfo);
+			contactNameInput.value = '';
+			contactEmailInput.value = '';
+			contactMsgTextaera.value = '';
 
 			const result = await response.json();
 			console.log('sent', result);
 		} catch (error) {
-			console.error('Error during sending', error);
+			console.error('Error during sending catch', error);
 		}
-		console.log(contactData);
 	};
 
 	const validAndSend = () => {

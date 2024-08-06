@@ -1,0 +1,11 @@
+{
+    "name": "szymo/p2-butlag",
+    "autoload": {
+        "psr-4": {
+            "Szymo\\P2Butlag\\": "src/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.9"
+    }
+}

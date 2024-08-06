@@ -39,7 +39,7 @@ export const initNewsletter = () => {
 			email: newsletterInput.value,
 			timestamp: new Date().toISOString(),
 		};
-		await saveOnMailingList(emailDate);
+		// await saveOnMailingList(emailDate);
 		//
 		// Delete popup when I'll be done with server setup
 		//
