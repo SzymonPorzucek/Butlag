@@ -184,7 +184,7 @@
 .nav {
 	position: relative;
 	text-transform: uppercase;
-	li {
+	li,a {
 		display: flex;
 		align-items: center;
 		padding: 1rem;
@@ -207,6 +207,8 @@
 		width: 40px;
 		background-color: var(--secondary-color);
 		transition: background-color 0.3s;
+	}.logo-nav{
+		mask: url(../../images/receipt.svg) center/cover;
 	}
 	.home {
 		mask: url(../../images/home.svg) center/cover;

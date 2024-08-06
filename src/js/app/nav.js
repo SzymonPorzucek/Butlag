@@ -9,6 +9,7 @@ export const initNav = () => {
 	const navTodoList = document.querySelector('.nav__item--todo-list');
 	const navProfile = document.querySelector('.nav__item--profile');
 	
+	
 	const navOverlay = document.querySelector('.overlay');
 
 	const shortcutShoppingList = document.querySelector(

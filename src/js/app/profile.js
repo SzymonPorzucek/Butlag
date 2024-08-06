@@ -9,7 +9,7 @@ export const initProfile = () => {
 	const getUserData = () => {
 		const user = sessionStorage.getItem('userData');
 		const userToken = sessionStorage.getItem('authToken');
-		console.log(userToken);
+	
 		if (userToken === 'userLoggedIn' && user) {
 			return JSON.parse(user);
 		}
