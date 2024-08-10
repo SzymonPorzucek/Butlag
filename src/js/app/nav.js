@@ -8,8 +8,7 @@ export const initNav = () => {
 	const navNotes = document.querySelector('.nav__item--notes');
 	const navTodoList = document.querySelector('.nav__item--todo-list');
 	const navProfile = document.querySelector('.nav__item--profile');
-	
-	
+
 	const navOverlay = document.querySelector('.overlay');
 
 	const shortcutShoppingList = document.querySelector(
@@ -29,7 +28,6 @@ export const initNav = () => {
 	const todoListSection = document.querySelector('#todo-list');
 	const profileSection = document.querySelector('#profile');
 
-
 	const notifications = document.querySelector('.notifications');
 
 	const navItems = [
@@ -38,7 +36,7 @@ export const initNav = () => {
 		{ button: navNotes, section: notesSection },
 		{ button: navTodoList, section: todoListSection },
 		{ button: navProfile, section: profileSection },
-	
+
 		{ button: shortcutShoppingList, section: shoppingListSection },
 		{ button: shortcutNotes, section: notesSection },
 		{ button: shortcutTodoList, section: todoListSection },
@@ -64,7 +62,7 @@ export const initNav = () => {
 		const scrollbarWidth = getScrollbarWidth();
 		document.documentElement.style.setProperty(
 			'--scrollbar-width',
-			`${getScrollbarWidth()}px`
+			`${scrollbarWidth}px`
 		);
 	};
 

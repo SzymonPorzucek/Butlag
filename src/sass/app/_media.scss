@@ -16,15 +16,23 @@
 			padding: 1rem;
 		}
 	}
-    .sign-up{
-        &__register{
-font-size: 1.5rem;
-        }
-    }
-	.forgot-password{
-		.title-h2{
+	.sign-up {
+		&__register {
+			font-size: 1.5rem;
+		}
+	}
+	.forgot-password {
+		.title-h2 {
 			max-width: 20ch;
 		}
+	}
+	.shopping-list-item__search-box.active {
+		flex-direction: row;
+		align-items: start;
+	}
+	.search-results-box,
+	.shopping-list-to-save-box {
+		max-height: 60vh;
 	}
 	
 }

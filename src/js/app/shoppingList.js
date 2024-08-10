@@ -32,12 +32,20 @@ export const initShoppingList = () => {
 	const chosenProductsBox=document.querySelector('.shopping-list-to-save-box')
 	const chosenProductsDeleteAllBtn = document.querySelector('.delete-all-btn');
 	const chosenProductsInfoArea = document.querySelector('.info-area');
+	const listTitle = document.querySelector('.list-title');
 	//prettier-ignore
 	const deleteAllShoppingListsBtn = document.querySelector('#sl-card-delete-all');
+	//prettier-ignore
+	const deleteAllShoppingListsConformation = document.querySelector('#delete-all-lists-conformation');
+	//prettier-ignore
+	const deleteAllShoppingListsConfirmBtn = document.querySelector('#delete-all-lists-confirm');
+	//prettier-ignore
+	const deleteAllShoppingListsCancelBtn = document.querySelector('#delete-all-lists-cancel');
 
 	const shoppingListQuantity = document.querySelector(
 		'#shopping-list-quantity'
 	);
+
 	let productsToSaveArr = [];
 	let currentListId = null;
 
@@ -48,11 +56,16 @@ export const initShoppingList = () => {
 		});
 		currentListId = listId;
 		if (listId === null) {
+			listTitle.textContent = 'ADD NEW';
 			productsToSaveArr = [];
 		} else {
 			const shoppingListArr = getShoppingList();
 			const selectedList = shoppingListArr.find(list => list.id === listId);
+			const selectedIndex = shoppingListArr.findIndex(
+				list => list.id === listId
+			);
 			productsToSaveArr = selectedList ? selectedList.products : [];
+			listTitle.textContent = `List #${selectedIndex + 1}`;
 		}
 		searchingBox.classList.add('active');
 		displayChosenProducts();
@@ -328,10 +341,36 @@ export const initShoppingList = () => {
 		shoppingListsArr.length = 0;
 		saveShoppingLists(shoppingListsArr);
 		loadExistingLists();
+		cancelDeleteAllShoppingLists();
 	};
+	const showDeleteAllShoppingListsConformation = () => {
+		const shoppingListsArr = getShoppingList();
+		if (shoppingListsArr.length > 0) {
+			deleteAllShoppingListsConformation.style.display = 'block';
+		}
+	};
+
+	const cancelDeleteAllShoppingLists = () => {
+		deleteAllShoppingListsConformation.style.display = 'none';
+	};
+
+	const handleClickOutside = e => {
+		const deleteAllContent = document.querySelector(
+			'.delete-all-confirmation-content'
+		);
+		if (deleteAllShoppingListsConformation.style.display === 'block') {
+			if (
+				!deleteAllContent.contains(e.target) &&
+				!deleteAllShoppingListsBtn.contains(e.target)
+			) {
+				cancelDeleteAllShoppingLists();
+			}
+		}
+	};
+
 	const displayListsQuantity = () => {
 		const shoppingListsArr = getShoppingList();
-		if (!shoppingListsArr||shoppingListsArr.length === 0) {
+		if (!shoppingListsArr || shoppingListsArr.length === 0) {
 			shoppingListQuantity.textContent = '0';
 		} else {
 			shoppingListQuantity.textContent = `${shoppingListsArr.length}`;
@@ -348,5 +387,11 @@ export const initShoppingList = () => {
 	saveAddNewBtn.addEventListener('click', saveNewList);
 	productsInput.addEventListener('input', debounce(findProducts, 300));
 	chosenProductsDeleteAllBtn.addEventListener('click', chosenProductsDeleteAll);
-	deleteAllShoppingListsBtn.addEventListener('click', deleteAllShoppingLists);
+	//prettier-ignore
+	deleteAllShoppingListsBtn.addEventListener('click',showDeleteAllShoppingListsConformation);
+	//prettier-ignore
+	deleteAllShoppingListsCancelBtn.addEventListener('click',cancelDeleteAllShoppingLists);
+	document.addEventListener('click', handleClickOutside);
+	//prettier-ignore
+	deleteAllShoppingListsConfirmBtn.addEventListener('click',deleteAllShoppingLists);
 };

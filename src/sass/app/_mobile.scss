@@ -184,7 +184,8 @@
 .nav {
 	position: relative;
 	text-transform: uppercase;
-	li,a {
+	li,
+	a {
 		display: flex;
 		align-items: center;
 		padding: 1rem;
@@ -207,7 +208,8 @@
 		width: 40px;
 		background-color: var(--secondary-color);
 		transition: background-color 0.3s;
-	}.logo-nav{
+	}
+	.logo-nav {
 		mask: url(../../images/receipt.svg) center/cover;
 	}
 	.home {
@@ -381,13 +383,13 @@
 		width: 100%;
 		z-index: 100;
 		.search-input {
-			width: 50%;
+			width: 30%;
 			min-width: fit-content;
 			padding: 0.75rem;
 			font-size: 1.25rem;
 			text-align: center;
 			border-radius: 10px;
-			transition: width 0.3s;
+			transition: width 0.5s;
 			&:hover,
 			&:focus {
 				width: 80%;
@@ -405,6 +407,10 @@
 			text-transform: uppercase;
 			padding: 1rem 0;
 		}
+		.list-title {
+			color: var(--secondary-color);
+			font-size: 1.5rem;
+		}
 	}
 }
 
@@ -412,8 +418,8 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	width: 100%;
-	max-height: 55vh;
+	width: 80%;
+	max-height: 35vh;
 	overflow-y: auto;
 	scrollbar-width: none;
 	margin-top: 0.25rem;
@@ -425,7 +431,7 @@
 .product-to-save,
 .result {
 	display: flex;
-	width: 95%;
+	width: 100%;
 	padding: 1rem 2rem;
 	color: var(--secondary-color-2);
 	background-color: var(--primary-color-90p);
@@ -473,6 +479,7 @@
 }
 .shopping-list-to-save-box {
 	display: flex;
+	width: 80%;
 	padding: 1rem 0;
 	flex-direction: column;
 	align-items: center;
@@ -484,7 +491,9 @@
 	}
 }
 .shopping-list-item__search-box.active {
-	display: block;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	cursor: default;
 }
 .info-area {
@@ -581,5 +590,49 @@
 	a {
 		color: royalblue;
 		text-decoration: underline;
+	}
+}
+.delete-all-confirmation {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	
+	
+	&::after {
+		content: '';
+		position: absolute;
+		background-color: var(--primary-color-50p);
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 102;
+	}
+	.delete-all-confirmation-content {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background-color: var(--primary-color-90p);
+		width: 80vw;
+		min-width: 250px;
+		max-width: 750px;
+		padding: 2.5rem;
+		border-radius: 20px;
+		border: 1px solid var(--accent-color);
+		z-index: 104;
+	}
+	.text {
+		text-align: center;
+	}
+	.confirm {
+		background-color: tomato;
+		transition: background-color 0.3s;
+		&:hover {
+			background-color: rgb(208, 104, 86);
+		}
 	}
 }
