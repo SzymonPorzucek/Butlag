@@ -17,7 +17,7 @@ The project is live and accessible online at [butlag.com](https://butlag.com/).
 
 The live version of the application is hosted at [butlag.com](https://butlag.com/). The contact section of the website is managed using PHP to handle form submissions and communications.
 
-Note:The PHP code is not included in the repository.
+Note: The PHP code is not included in the repository.
 
 ## Installation
 
