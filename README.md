@@ -57,8 +57,13 @@ To run this project locally:
      ```bash
      npm install --force
      ```
+5. Install gulp:
+ 
+```bash
+npm install -g gulp-cli
+```
 
-5. Run the development server:
+6. Run the development server:
 
 ```bash
 gulp
